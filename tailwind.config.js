@@ -79,5 +79,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require('@pyncz/tailwind-mask-image')],
+  plugins: [require("tailwindcss-animate")],
 }
