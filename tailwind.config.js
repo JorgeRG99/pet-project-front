@@ -17,8 +17,11 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        "alegreya": ['Alegreya Sans', 'sans-serif']
+      },
       colors: {
-        
+
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -76,5 +79,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require('@pyncz/tailwind-mask-image')],
 }

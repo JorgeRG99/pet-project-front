@@ -17,13 +17,13 @@ const pets = [
     title: "Perros",
     href: "/perros",
     description:
-      "Leales y llenos de energía, descubre tu próximo compañero fiel",
+      "Leales y llenos de energía, descubre tu próximo compañero fiel.",
   },
   {
     title: "Gatos",
     href: "/gatos",
     description:
-      "Elegantes y misteriosos, encuentra un compañero con estilo y carácter",
+      "Elegantes y misteriosos, encuentra un compañero con estilo y carácter.",
   },
 ];
 
@@ -32,25 +32,25 @@ const services = [
     title: "Hotel",
     href: "/hotel",
     description:
-      "Atención experta para su bienestar, cuidamos de tu mascota como si fuera nuestra",
+      "Atención experta para su bienestar, cuidamos de tu mascota como si fuera nuestra.",
   },
   {
     title: "Adiestramiento",
     href: "/adiestramiento",
     description:
-      "Entrenamiento personalizado: fortalece el vínculo y mejora la conducta de tu amigo peludo",
+      "Entrenamiento personalizado: fortalece el vínculo y mejora la conducta de tu amigo peludo.",
   },
   {
     title: "Educación animal",
     href: "/educacion",
     description:
-      "Aprende sobre tu mascota: consejos y técnicas para una convivencia feliz y saludable",
+      "Aprende sobre tu mascota: consejos y técnicas para una convivencia feliz y saludable.",
   },
 ];
 
 export function Navbar() {
   return (
-    <header className="flex justify-between items-center w-full px-4 border-b-2 border-primary-extra-light">
+    <header className="flex justify-between items-center w-full px-4 border-b-2 border-primary-extra-light bg-white">
       <div className="">
         <PetLogo />
       </div>
