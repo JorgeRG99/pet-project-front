@@ -10,7 +10,7 @@ function ServicesHome() {
     <section className="flex flex-col gap-24">
       <HomeSectionTitle content="Nuestros servicios" />
 
-      <article className="flex justify-evenly">
+      <article className="flex lg:flex-row flex-col justify-evenly items-center lg:gap-0 gap-24 sm:p-0 p-16">
         <ServiceHomeCard
           key={crypto.randomUUID()}
           title={HOME_SERVICES_CARD_CONTENTS.hotel.title}
