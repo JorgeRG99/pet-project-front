@@ -1,0 +1,40 @@
+import Hotel from "@/icons/Hotel";
+import { HOME_SERVICES_CARD_CONTENTS } from "@/config";
+import Dumbell from "@/icons/Dumbell";
+import Education from "@/icons/Education";
+import ServiceHomeCard from "./asset-components/ServiceHomeCard";
+import HomeSectionTitle from "./asset-components/HomeSectionTitle";
+
+function ServicesHome() {
+  return (
+    <section className="flex flex-col gap-24">
+      <HomeSectionTitle content="Nuestros servicios" />
+
+      <article className="flex justify-evenly">
+        <ServiceHomeCard
+          key={crypto.randomUUID()}
+          title={HOME_SERVICES_CARD_CONTENTS.hotel.title}
+          description={HOME_SERVICES_CARD_CONTENTS.hotel.description}
+        >
+          <Hotel />
+        </ServiceHomeCard>
+        <ServiceHomeCard
+          key={crypto.randomUUID()}
+          title={HOME_SERVICES_CARD_CONTENTS.training.title}
+          description={HOME_SERVICES_CARD_CONTENTS.training.description}
+        >
+          <Dumbell />
+        </ServiceHomeCard>
+        <ServiceHomeCard
+          key={crypto.randomUUID()}
+          title={HOME_SERVICES_CARD_CONTENTS.education.title}
+          description={HOME_SERVICES_CARD_CONTENTS.education.description}
+        >
+          <Education />
+        </ServiceHomeCard>
+      </article>
+    </section>
+  );
+}
+
+export default ServicesHome;

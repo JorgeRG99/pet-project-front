@@ -1,6 +1,7 @@
-import About from "@/pages-components/About";
-import HeroSection from "@/pages-components/HeroSection";
-import ServicesHome from "@/pages-components/ServicesHome";
+import About from "@/pages-components/home/About";
+import HeroSection from "@/pages-components/home/HeroSection";
+import ServicesHome from "@/pages-components/home/ServicesHome";
+
 
 function Home() {
   return (
