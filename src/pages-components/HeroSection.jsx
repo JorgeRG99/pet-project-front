@@ -3,7 +3,13 @@ import { Button } from "@/components/ui/button";
 export default function HeroSection() {
   return (
     <section className="flex justify-evenly xl:pt-24 md:pt-16">
-      <article className="h-[70vh] flex flex-col items-start justify-center gap-6">
+      <article className="h-[70vh] flex flex-col items-start justify-center gap-6 relative">
+        <div className="xl:w-[180px] lg:w-[130px] md:w-[80px] z-10 sm:w-[20px] w-[100px] absolute top-[-10%] left-[60%] bg-primary rounded-[50%] overflow-hidden">
+          <img
+            src="./images/home/hero-section3.png"
+            alt="Pequeño perro blanco tumbado tranquilamente sobre una superficie suave, luciendo relajado y sereno"
+          />
+        </div>
         <h1 className="xl:text-5xl lg:text-4xl md:text-3xl font-alegreya font-bold xl:w-[580px] lg:w-[480px] md:w-[380px] [word-spacing:10px]">
           <span className="text-primary">
             Pet<span className="xl:text-7xl lg:text-6xl md:text-5xl">4</span>You
@@ -11,8 +17,12 @@ export default function HeroSection() {
           , donde cada animal encuentra su familia perfecta.
         </h1>
         <div className="space-x-8">
-          <Button variant="secondary" size="lg" color="primary-light">Servicios</Button>
-          <Button className="text-white" size="lg">Registro</Button>
+          <Button variant="secondary" size="lg" color="primary-light">
+            Servicios
+          </Button>
+          <Button className="text-white" size="lg">
+            Registro
+          </Button>
         </div>
       </article>
       <article className="relative w-[45%]">
