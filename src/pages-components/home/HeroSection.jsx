@@ -30,13 +30,13 @@ export default function HeroSection() {
         </div>
       </article>
       <article className="relative w-[45%]">
-        <div className="xl:w-[300px] lg:w-[250px] md:w-[200px] z-10 sm:w-[150px] w-[100px] absolute top-4 left-[20%] bg-primary-dark rounded-[50%] overflow-hidden">
+        <div className="xl:w-[300px] lg:w-[250px] md:w-[200px] sm:w-[150px] w-[100px] absolute top-4 left-[20%] bg-primary-dark rounded-[50%] overflow-hidden">
           <img
             src="./images/home/hero-section1.png"
             alt="Pequeño perro blanco tumbado tranquilamente sobre una superficie suave, luciendo relajado y sereno"
           />
         </div>
-        <div className="xl:w-[300px] lg:w-[250px] md:w-[200px] z-10 sm:w-[150px] w-[100px] absolute top-80 right-0 bg-primary-light rounded-full overflow-hidden">
+        <div className="xl:w-[300px] lg:w-[250px] md:w-[200px] sm:w-[150px] w-[100px] absolute top-80 right-0 bg-primary-light rounded-full overflow-hidden">
           <img
             src="./images/home/hero-section2.png"
             width="100%"
