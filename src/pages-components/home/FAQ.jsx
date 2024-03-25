@@ -9,7 +9,7 @@ import { HOME_FAQ } from "@/config";
 
 export default function FAQ() {
   return (
-    <section className="space-y-20 flex flex-col items-center xl:px-96 lg:px-64 md:px-32 sm:px-16 px-8 pb-20">
+    <section className="space-y-20 flex flex-col items-center xl:px-96 lg:px-64 md:px-32 sm:px-16 px-8 pb-44">
       <HomeSectionTitle content="Preguntas frecuentes" />
 
       <article className="w-full">

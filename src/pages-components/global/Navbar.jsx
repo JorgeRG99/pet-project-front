@@ -9,50 +9,20 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
-import PetLogo from "@/icons/PetLogo";
 import { Button } from "@/components/ui/button";
-
-const pets = [
-  {
-    title: "Perros",
-    href: "/perros",
-    description:
-      "Leales y llenos de energía, descubre tu próximo compañero fiel.",
-  },
-  {
-    title: "Gatos",
-    href: "/gatos",
-    description:
-      "Elegantes y misteriosos, encuentra un compañero con estilo y carácter.",
-  },
-];
-
-const services = [
-  {
-    title: "Hotel",
-    href: "/hotel",
-    description:
-      "Atención experta para su bienestar, cuidamos de tu mascota como si fuera nuestra.",
-  },
-  {
-    title: "Adiestramiento",
-    href: "/adiestramiento",
-    description:
-      "Entrenamiento personalizado: fortalece el vínculo y mejora la conducta de tu amigo peludo.",
-  },
-  {
-    title: "Educación animal",
-    href: "/educacion",
-    description:
-      "Aprende sobre tu mascota: consejos y técnicas para una convivencia feliz y saludable.",
-  },
-];
+import { NAVBAR_PETS, NAVBAR_SERVICES } from "@/config";
 
 export function Navbar() {
   return (
-    <header className="flex justify-between items-center w-full px-4 border-b-2 border-primary-extra-light bg-white">
-      <div className="">
-        <PetLogo />
+    <header className="flex justify-between items-center w-full p-4 border-b-[3px] border-primary bg-white">
+      <div className="flex items-center space-x-4">
+        <img
+          width="40px"
+          src="./images/pet4you-logo.png"
+          alt="Logo pet4you basado en un gato
+      "
+        />
+        <h1 className="font-alegreya font-semibold text-2xl">PET <span className="text-primary text-5xl">4</span> YOU</h1>
       </div>
       <NavigationMenu className="absolute left-1/2 transform -translate-x-1/2">
         <NavigationMenuList>
@@ -62,7 +32,7 @@ export function Navbar() {
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {pets.map((component) => (
+                {NAVBAR_PETS.map((component) => (
                   <ListItem
                     key={crypto.randomUUID()}
                     title={component.title}
@@ -80,7 +50,7 @@ export function Navbar() {
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {services.map((component) => (
+                {NAVBAR_SERVICES.map((component) => (
                   <ListItem
                     key={crypto.randomUUID()}
                     title={component.title}
@@ -95,8 +65,8 @@ export function Navbar() {
         </NavigationMenuList>
       </NavigationMenu>
       <div className="space-x-4">
-        <Button variant="ghost">Acceder</Button>
-        <Button className="text-white">Registro</Button>
+        <Button variant="ghost" className="text-primary-dark hover:text-primary-dark hover:bg-primary-extra-light">Acceder</Button>
+        <Button className="text-white bg-primary-dark">Registro</Button>
       </div>
     </header>
   );

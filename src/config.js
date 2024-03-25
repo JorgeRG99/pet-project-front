@@ -5,6 +5,42 @@ export const PAGES_URLS = {
     pets: "/mascotas"
 }
 
+export const NAVBAR_PETS = [
+    {
+      title: "Perros",
+      href: "/perros",
+      description:
+        "Leales y llenos de energía, descubre tu próximo compañero fiel.",
+    },
+    {
+      title: "Gatos",
+      href: "/gatos",
+      description:
+        "Elegantes y misteriosos, encuentra un compañero con estilo y carácter.",
+    },
+  ];
+  
+export const NAVBAR_SERVICES = [
+    {
+      title: "Hotel",
+      href: "/hotel",
+      description:
+        "Atención experta para su bienestar, cuidamos de tu mascota como si fuera nuestra.",
+    },
+    {
+      title: "Adiestramiento",
+      href: "/adiestramiento",
+      description:
+        "Entrenamiento personalizado: fortalece el vínculo y mejora la conducta de tu amigo peludo.",
+    },
+    {
+      title: "Educación animal",
+      href: "/educacion",
+      description:
+        "Aprende sobre tu mascota: consejos y técnicas para una convivencia feliz y saludable.",
+    },
+  ];
+
 export const HOME_SERVICES_CARD_CONTENTS = {
     hotel: {
         title: "Hotel de cuidados",

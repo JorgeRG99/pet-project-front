@@ -17,7 +17,7 @@ export default function About() {
       <article className="lg:w-[50%] font-alegreya space-y-16 lg:px-20 md:px-30 px-10">
         <HomeSectionTitle content={HOME_ABOUT.title} />
 
-        <div className="space-y-8">
+        <div className="space-y-12">
           {HOME_ABOUT.paragraphs.map((paragraph) => (
             <AboutParagraph key={crypto.randomUUID()} content={paragraph} />
           ))}

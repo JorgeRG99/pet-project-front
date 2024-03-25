@@ -11,14 +11,18 @@ export default function HeroSection() {
           />
         </div>
         <h1 className="xl:text-5xl lg:text-4xl md:text-3xl font-alegreya font-bold xl:w-[580px] lg:w-[480px] md:w-[380px] [word-spacing:10px]">
-          <span className="text-primary">
-            Pet<span className="xl:text-7xl lg:text-6xl md:text-5xl">4</span>You
+          <span>
+            Pet
+            <span className="xl:text-7xl lg:text-6xl md:text-5xl text-primary">
+              4
+            </span>
+            You
           </span>
           , donde cada animal encuentra su familia perfecta.
         </h1>
         <div className="space-x-8">
-          <Button variant="secondary" size="lg" color="primary-light">
-            Servicios
+          <Button variant="secondary" size="lg" className="text-primary-dark border-primary hover:text-primary-dark bg-primary-extra-light">
+            Acceder
           </Button>
           <Button className="text-white" size="lg">
             Registro
@@ -26,7 +30,7 @@ export default function HeroSection() {
         </div>
       </article>
       <article className="relative w-[45%]">
-        <div className="xl:w-[300px] lg:w-[250px] md:w-[200px] z-10 sm:w-[150px] w-[100px] absolute top-4 left-[20%] bg-primary rounded-[50%] overflow-hidden">
+        <div className="xl:w-[300px] lg:w-[250px] md:w-[200px] z-10 sm:w-[150px] w-[100px] absolute top-4 left-[20%] bg-primary-dark rounded-[50%] overflow-hidden">
           <img
             src="./images/home/hero-section1.png"
             alt="Pequeño perro blanco tumbado tranquilamente sobre una superficie suave, luciendo relajado y sereno"
