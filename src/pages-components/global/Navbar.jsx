@@ -11,6 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { NAVBAR_PETS, NAVBAR_SERVICES } from "@/config";
+import SheetNav from "./SheetNav";
 
 export function Navbar() {
   return (
@@ -24,7 +25,7 @@ export function Navbar() {
         />
         <h1 className="font-alegreya font-semibold text-2xl">PET <span className="text-primary text-5xl">4</span> YOU</h1>
       </div>
-      <NavigationMenu className="absolute left-1/2 transform -translate-x-1/2">
+      <NavigationMenu className="absolute left-1/2 transform -translate-x-1/2 sm:block hidden">
         <NavigationMenuList>
           <NavigationMenuItem>
             <NavigationMenuTrigger className="text-md">
@@ -64,10 +65,11 @@ export function Navbar() {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      <div className="space-x-4">
+      <div className="space-x-4 sm:block hidden">
         <Button variant="ghost" className="text-primary-dark hover:text-primary-dark hover:bg-primary-extra-light">Acceder</Button>
         <Button className="text-white bg-primary-dark">Registro</Button>
       </div>
+      <SheetNav />
     </header>
   );
 }

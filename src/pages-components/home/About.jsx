@@ -4,7 +4,7 @@ import HomeSectionTitle from "./asset-components/HomeSectionTitle";
 
 export default function About() {
   return (
-    <section className="flex lg:flex-row flex-col-reverse justify-evenly items-center pt-20 lg:gap-0 gap-20">
+    <section className="flex lg:flex-row flex-col-reverse justify-evenly items-center lg:pt-20 pt-0 lg:gap-0 gap-20">
       <div className="xl:w-[35%] lg:w-[40%] md:w-[50%] w-[60%]">
         <img
           className="shadow-2xl rounded-2xl"
