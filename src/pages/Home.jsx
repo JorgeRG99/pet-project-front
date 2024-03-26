@@ -6,7 +6,7 @@ import ServicesHome from "@/pages-components/home/ServicesHome";
 
 function Home() {
   return (
-    <main className="space-y-60">
+    <main className="lg:space-y-60 space-y-40">
       <HeroSection />
       <About />
       <ServicesHome />
