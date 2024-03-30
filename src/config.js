@@ -7,39 +7,39 @@ export const PAGES_URLS = {
 
 export const NAVBAR_PETS = [
     {
-      title: "Perros",
-      href: "/perros",
-      description:
-        "Leales y llenos de energía, descubre tu próximo compañero fiel.",
+        title: "Perros",
+        href: "/perros",
+        description:
+            "Leales y llenos de energía, descubre tu próximo compañero fiel.",
     },
     {
-      title: "Gatos",
-      href: "/gatos",
-      description:
-        "Elegantes y misteriosos, encuentra un compañero con estilo y carácter.",
+        title: "Gatos",
+        href: "/gatos",
+        description:
+            "Elegantes y misteriosos, encuentra un compañero con estilo y carácter.",
     },
-  ];
-  
+];
+
 export const NAVBAR_SERVICES = [
     {
-      title: "Hotel",
-      href: "/hotel",
-      description:
-        "Atención experta para su bienestar, cuidamos de tu mascota como si fuera nuestra.",
+        title: "Hotel",
+        href: "/hotel",
+        description:
+            "Atención experta para su bienestar, cuidamos de tu mascota como si fuera nuestra.",
     },
     {
-      title: "Adiestramiento",
-      href: "/adiestramiento",
-      description:
-        "Entrenamiento personalizado: fortalece el vínculo y mejora la conducta de tu amigo peludo.",
+        title: "Adiestramiento",
+        href: "/adiestramiento",
+        description:
+            "Entrenamiento personalizado: fortalece el vínculo y mejora la conducta de tu amigo peludo.",
     },
     {
-      title: "Educación animal",
-      href: "/educacion",
-      description:
-        "Aprende sobre tu mascota: consejos y técnicas para una convivencia feliz y saludable.",
+        title: "Educación animal",
+        href: "/educacion",
+        description:
+            "Aprende sobre tu mascota: consejos y técnicas para una convivencia feliz y saludable.",
     },
-  ];
+];
 
 export const HOME_SERVICES_CARD_CONTENTS = {
     hotel: {
@@ -87,3 +87,41 @@ export const HOME_FAQ = [
         answer: "Preparar tu hogar incluye asegurar un ambiente seguro y acogedor. Esto incluye tener las provisiones necesarias, como comida, una cama, juguetes, y asegurarte de que tu hogar es un espacio seguro para ellos."
     }
 ]
+
+
+//Routes
+const API_ORIGIN = import.meta.env.VITE_APP_API_ORIGIN
+
+
+// ------------ USER -------------
+export const USER_REGISTER = `${API_ORIGIN}/register`
+export const USER_LOGIN = `${API_ORIGIN}/login`
+export const USER = `${API_ORIGIN}/user`
+
+// ------------ ADOPTIONS -------------
+export const YOUR_ADOPTIONS = `${API_ORIGIN}/yourAdoptions`
+export const REQUEST_ADOPTION = `${API_ORIGIN}/requestAdoption`
+export const ADOPTION_BY_USER = `${API_ORIGIN}/adoptionsByUser/`
+export const ADOPTION_BY_PET = `${API_ORIGIN}/adoptionsByPet/`
+export const ACCEPT_ADOPTION = `${API_ORIGIN}/acceptAdoption/`
+export const CONFIRM_ADOPTIONS = `${API_ORIGIN}/confirmAdoption/`
+export const CANCEL_ADOPTION = `${API_ORIGIN}/cancelAdoption/`
+
+// ------------ PETS -------------
+export const ALL_PETS = `${API_ORIGIN}/pets`
+export const PET_BY_ID = `${API_ORIGIN}/pet/`
+export const ADD_PET = `${API_ORIGIN}/pet`
+export const UPDATE_PET = `${API_ORIGIN}/pet/`
+export const DELETE_PET = `${API_ORIGIN}/pet/`
+
+// ------------ SPECIES -------------
+export const ALL_SPECIES = `${API_ORIGIN}/species`
+export const ADD_SPECIE= `${API_ORIGIN}/specie`
+export const DELETE_SPECIE = `${API_ORIGIN}/specie/`
+
+// ------------ CARE SERVICES -------------
+export const CARE_SERVICE_BY_ID = `${API_ORIGIN}/service/`
+export const ALL_CARE_SERVICES = `${API_ORIGIN}/services`
+export const ADD_CARE_SERVICE = `${API_ORIGIN}/service`
+export const UPDATE_CARE_SERVICE = `${API_ORIGIN}/service/`
+export const DELETE_CARE_SERVICE = `${API_ORIGIN}/service/`
