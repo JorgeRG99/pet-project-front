@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Pets from "./pages/Pets";
 import Footer from "./pages-components/global/Footer";
 import SEO from "./pages-components/global/SEO";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
 
       <Routes>
         <Route path={PAGES_URLS.home} element={<Home />} />
+        <Route path={PAGES_URLS.register} element={<Register />} />
         <Route path={PAGES_URLS.pets} element={<Pets />} />
       </Routes>
 
