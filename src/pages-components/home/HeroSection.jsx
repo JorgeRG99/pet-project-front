@@ -15,8 +15,7 @@ export default function HeroSection() {
             <span className="xl:text-7xl lg:text-6xl md:text-5xl text-4xl text-primary">
               4
             </span>
-            You
-          , donde cada animal encuentra su familia perfecta.
+            You, donde cada animal encuentra su familia perfecta.
         </h1>
         <div className="space-x-8">
           <Button

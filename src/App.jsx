@@ -5,22 +5,17 @@ import { PAGES_URLS } from "./config";
 import Home from "./pages/Home";
 import Pets from "./pages/Pets";
 import Footer from "./pages-components/global/Footer";
-import SEO from "./pages-components/global/SEO";
+import HotelPage from "./pages/HotelPage";
 
 function App() {
   return (
     <>
-      <SEO
-        title="Learning React Helmet!"
-        description="Beginner friendly page for learning React Helmet."
-        name="Company name."
-        type="article"
-      />
       <Navbar />
 
       <Routes>
         <Route path={PAGES_URLS.home} element={<Home />} />
         <Route path={PAGES_URLS.pets} element={<Pets />} />
+        <Route path={PAGES_URLS.hotel} element={<HotelPage />} />
       </Routes>
 
       <Footer />
