@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { NAVBAR_PETS, NAVBAR_SERVICES } from "@/config";
+import { NAVBAR_PETS, NAVBAR_SERVICES, PAGES_URLS } from "@/config";
 import SheetNav from "./SheetNav";
 
 export function Navbar() {
@@ -66,8 +66,12 @@ export function Navbar() {
         </NavigationMenuList>
       </NavigationMenu>
       <div className="space-x-4 sm:block hidden">
-        <Button variant="ghost" className="text-primary-dark hover:text-primary-dark hover:bg-primary-extra-light">Acceder</Button>
-        <Button className="text-white bg-primary-dark">Registro</Button>
+        <Link>
+          <Button variant="ghost" className="text-primary-dark hover:text-primary-dark hover:bg-primary-extra-light">Acceder</Button>
+        </Link>
+        <Link to={PAGES_URLS.register}>
+          <Button className="text-white bg-primary-dark">Registro</Button>
+        </Link>
       </div>
       <SheetNav />
     </header>
