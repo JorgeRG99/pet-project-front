@@ -13,10 +13,6 @@ export function useRegisterValidation() {
         const isValidPhone = Validator.validateField(data.phone, USER_VALIDATION_REGEX.phone)
         const isValidBirthDate = Validator.validateField(data.birthDate, USER_VALIDATION_REGEX.birth) && isLegalAge(data.birthDate)
 
-        console.log(data.birthDate)
-        console.log(isLegalAge(data.birthDate))
-        console.log(Validator.validateField(data.birthDate, USER_VALIDATION_REGEX.birth) )
-
         return {
             dni: isValidDni,
             name: isValidName,
