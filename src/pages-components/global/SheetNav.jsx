@@ -8,12 +8,12 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { NAVBAR_PETS, NAVBAR_SERVICES } from "@/config";
 import { cn } from "@/lib/utils";
 import { NavigationMenuLink } from "@/components/ui/navigation-menu";
 import React from "react";
 import { Link } from "react-router-dom";
 import DropdownMenu from "./DropdownMenu";
+import { NAVBAR_PETS, NAVBAR_SERVICES } from "@/configs/content-config";
 
 export default function SheetNav() {
   return (

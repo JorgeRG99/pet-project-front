@@ -1,4 +1,4 @@
-import { HOME_ABOUT } from "@/config";
+import { HOME_ABOUT } from "@/configs/content-config";
 import AboutParagraph from "./asset-components/AboutParagraph";
 import HomeSectionTitle from "./asset-components/HomeSectionTitle";
 

@@ -10,8 +10,9 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { NAVBAR_PETS, NAVBAR_SERVICES, PAGES_URLS } from "@/config";
 import SheetNav from "./SheetNav";
+import { NAVBAR_PETS, NAVBAR_SERVICES } from "@/configs/content-config";
+import { PAGES_URLS } from "@/configs/app-routes-config";
 
 export function Navbar() {
   return (
@@ -66,7 +67,7 @@ export function Navbar() {
         </NavigationMenuList>
       </NavigationMenu>
       <div className="space-x-4 sm:block hidden">
-        <Link>
+        <Link to={PAGES_URLS.login}>
           <Button variant="ghost" className="text-primary-dark hover:text-primary-dark hover:bg-primary-extra-light">Acceder</Button>
         </Link>
         <Link to={PAGES_URLS.register}>

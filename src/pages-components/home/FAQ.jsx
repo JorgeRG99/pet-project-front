@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import HomeSectionTitle from "./asset-components/HomeSectionTitle";
-import { HOME_FAQ } from "@/config";
+import { HOME_FAQ } from "@/configs/content-config";
 
 export default function FAQ() {
   return (

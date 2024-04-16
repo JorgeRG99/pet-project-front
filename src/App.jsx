@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./pages-components/global/Navbar";
-import { PAGES_URLS } from "./config";
 import Home from "./pages/Home";
 import Pets from "./pages/Pets";
 import Login from "./pages/Login";
 import Footer from "./pages-components/global/Footer";
 import HotelPage from "./pages/HotelPage";
 import Register from "./pages/Register";
+import { PAGES_URLS } from "./configs/app-routes-config";
 
 function App() {
   return (

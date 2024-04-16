@@ -1,5 +1,4 @@
-import { 
-    USER_REGISTER, USER_LOGIN, USER} from '../../config'
+import { USER, USER_LOGIN, USER_REGISTER } from "@/configs/api-routes-config";
 
 export const user = async (authToken) => {
     try {

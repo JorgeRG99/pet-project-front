@@ -1,9 +1,9 @@
 import Hotel from "@/icons/Hotel";
-import { HOME_SERVICES_CARD_CONTENTS } from "@/config";
 import Dumbell from "@/icons/Dumbell";
 import Education from "@/icons/Education";
 import ServiceHomeCard from "./asset-components/ServiceHomeCard";
 import HomeSectionTitle from "./asset-components/HomeSectionTitle";
+import { HOME_SERVICES_CARD_CONTENTS } from "@/configs/content-config";
 
 function ServicesHome() {
   return (
