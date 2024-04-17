@@ -18,7 +18,6 @@ import { useUserSession } from "@/hooks/useUserSession";
 export function Navbar() {
   const { userSession } = useUserSession();
   const isAuthenticated = userSession.token;
-  console.log(isAuthenticated)
 
   return (
     <header className="flex justify-between items-center w-full p-4 border-b-[3px] border-primary bg-white">
