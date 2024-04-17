@@ -67,7 +67,7 @@ export default function Login() {
       </div>
       <img
         className="max-h-full w-auto hidden lg:flex"
-        src="https://images.pexels.com/photos/5255249/pexels-photo-5255249.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        src="./images/login/login.webp"
         alt="Login Image"
       />
     </main>

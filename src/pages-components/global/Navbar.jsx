@@ -18,13 +18,17 @@ export function Navbar() {
   return (
     <header className="flex justify-between items-center w-full p-4 border-b-[3px] border-primary bg-white">
       <div className="flex items-center space-x-4">
-        <img
-          width="40px"
-          src="./images/pet4you-logo.png"
-          alt="Logo pet4you basado en un gato
+        <Link to={PAGES_URLS.home} className="hover:scale-110 duration-150 ease-in-out">
+          <img
+            width="40px"
+            src="./images/pet4you-logo.png"
+            alt="Logo pet4you basado en un gato
       "
-        />
-        <h1 className="font-alegreya font-semibold text-2xl">PET <span className="text-primary text-5xl">4</span> YOU</h1>
+          />
+        </Link>
+        <h1 className="font-alegreya font-semibold text-2xl">
+          PET <span className="text-primary text-5xl">4</span> YOU
+        </h1>
       </div>
       <NavigationMenu className="absolute left-1/2 transform -translate-x-1/2 sm:block hidden">
         <NavigationMenuList>
@@ -68,7 +72,12 @@ export function Navbar() {
       </NavigationMenu>
       <div className="space-x-4 sm:block hidden">
         <Link to={PAGES_URLS.login}>
-          <Button variant="ghost" className="text-primary-dark hover:text-primary-dark hover:bg-primary-extra-light">Acceder</Button>
+          <Button
+            variant="ghost"
+            className="text-primary-dark hover:text-primary-dark hover:bg-primary-extra-light"
+          >
+            Acceder
+          </Button>
         </Link>
         <Link to={PAGES_URLS.register}>
           <Button className="text-white bg-primary-dark">Registro</Button>
