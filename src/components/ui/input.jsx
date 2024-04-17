@@ -14,7 +14,7 @@ const Input = React.forwardRef(({ className, type, error, ...props }, ref) => {
         ref={ref}
         {...props}
       />
-      <div className="min-h-[18px]">{error && <p className="text-destructive text-sm">{error}</p>}</div>
+      <div>{error && <p className="text-destructive text-sm">{error}</p>}</div>
     </div>
   );
 });

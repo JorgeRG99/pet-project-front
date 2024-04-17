@@ -1,4 +1,4 @@
-import { USER, USER_LOGIN, USER_REGISTER } from "@/configs/api-routes-config";
+import { SESSION_RECOVER, USER, USER_LOGIN, USER_REGISTER } from "@/configs/api-routes-config";
 
 export const user = async (authToken) => {
     try {
@@ -9,7 +9,7 @@ export const user = async (authToken) => {
         });
         if (!res.ok) throw new Error(`Error en la solicitud ${res.status}`)
 
-        const response =  await res.json();
+        const response = await res.json();
 
         return response;
     } catch (error) {
@@ -28,7 +28,7 @@ export const userRegister = async (userData) => {
             },
             body: JSON.stringify(userData),
         });
-        if (!res.ok) throw new Error(`Error en la solicitud ${res.status}`);
+        if (!res.ok) return 500;
 
         const response = await res.json();
 
@@ -49,7 +49,7 @@ export const userLogin = async (userCredentials) => {
             body: JSON.stringify(userCredentials),
         });
 
-        if (!res.ok) throw new Error(`Error en la solicitud ${res.status}`);
+        if (!res.ok) return 500;
 
         const response = res.json()
 
@@ -60,3 +60,20 @@ export const userLogin = async (userCredentials) => {
     }
 }
 
+export const recoverSession = async (authToken) => {
+    try {
+        const res = await fetch(SESSION_RECOVER, {
+            headers: {
+                'Authorization': `Bearer ${authToken}`
+            },
+        });
+
+        if (!res.ok) return 500;
+
+        const response = res.json()
+
+        return response;
+    } catch (error) {
+        throw new Error(`Error en la recuperación de datos del ususario de usuario ${error.message}`);
+    }
+}

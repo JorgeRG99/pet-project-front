@@ -1,3 +1,6 @@
+// AUTH TOKEN STORAGE KEY NAME
+export const AUTH_TOKEN_STORAGE_KEY = 'Pet4YouAuthToken'
+
 // API ROUTES
 const API_ORIGIN = import.meta.env.VITE_APP_API_ORIGIN
 
@@ -6,6 +9,7 @@ const API_MIDDLEWARE = '/api'
 
 
 // ------------ USER -------------
+export const SESSION_RECOVER = `${API_ORIGIN}${API_MIDDLEWARE}/recoverSession`
 export const USER_REGISTER = `${API_ORIGIN}${API_MIDDLEWARE}/register`
 export const USER_LOGIN = `${API_ORIGIN}${API_MIDDLEWARE}/login`
 export const USER = `${API_ORIGIN}${API_MIDDLEWARE}/user`

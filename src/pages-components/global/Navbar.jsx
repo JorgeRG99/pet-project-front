@@ -13,12 +13,20 @@ import { Button } from "@/components/ui/button";
 import SheetNav from "./SheetNav";
 import { NAVBAR_PETS, NAVBAR_SERVICES } from "@/configs/content-config";
 import { PAGES_URLS } from "@/configs/app-routes-config";
+import { useUserSession } from "@/hooks/useUserSession";
 
 export function Navbar() {
+  const { userSession } = useUserSession();
+  const isAuthenticated = userSession.token;
+  console.log(isAuthenticated)
+
   return (
     <header className="flex justify-between items-center w-full p-4 border-b-[3px] border-primary bg-white">
       <div className="flex items-center space-x-4">
-        <Link to={PAGES_URLS.home} className="hover:scale-110 duration-150 ease-in-out">
+        <Link
+          to={PAGES_URLS.home}
+          className="hover:scale-110 duration-150 ease-in-out"
+        >
           <img
             width="40px"
             src="./images/pet4you-logo.png"
@@ -71,17 +79,25 @@ export function Navbar() {
         </NavigationMenuList>
       </NavigationMenu>
       <div className="space-x-4 sm:block hidden">
-        <Link to={PAGES_URLS.login}>
-          <Button
-            variant="ghost"
-            className="text-primary-dark hover:text-primary-dark hover:bg-primary-extra-light"
-          >
-            Acceder
-          </Button>
-        </Link>
-        <Link to={PAGES_URLS.register}>
-          <Button className="text-white bg-primary-dark">Registro</Button>
-        </Link>
+        {!isAuthenticated ? (
+          <>
+            <Link to={PAGES_URLS.login}>
+              <Button
+                variant="ghost"
+                className="text-primary-dark hover:text-primary-dark hover:bg-primary-extra-light"
+              >
+                Acceder
+              </Button>
+            </Link>
+            <Link to={PAGES_URLS.register}>
+              <Button className="text-white bg-primary-dark">Registro</Button>
+            </Link>
+          </>
+        ) : (
+          <Link>
+            <Button className="text-white bg-primary-dark">Perfil</Button>
+          </Link>
+        )}
       </div>
       <SheetNav />
     </header>

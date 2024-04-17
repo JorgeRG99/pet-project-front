@@ -1,6 +1,6 @@
 import { USER_VALIDATION_REGEX } from "@/configs/validation-config"
 import { Validator } from "@/utils/utility-classes/user-data-validator"
-import { isLegalAge } from "@/utils/utility-js/isLegalAge"
+import { isLegalAge } from "@/utils/utility-functions/isLegalAge"
 
 export function useRegisterValidation() {
     const validateRegisterData = (data) => {

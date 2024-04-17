@@ -3,7 +3,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
-import { convertKeysToSnakeCase } from "@/utils/utility-js/fetchKeysFormat";
+import { convertKeysToSnakeCase } from "@/utils/utility-functions/fetchKeysFormat";
 import { useRegisterValidation } from "@/hooks/useRegisterValidations";
 import { Validator } from "@/utils/utility-classes/user-data-validator";
 import { USER_VALIDATION_MESSAGES } from "@/configs/validation-config";

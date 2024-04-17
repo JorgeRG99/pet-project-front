@@ -14,8 +14,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import DropdownMenu from "./DropdownMenu";
 import { NAVBAR_PETS, NAVBAR_SERVICES } from "@/configs/content-config";
+import { PAGES_URLS } from "@/configs/app-routes-config";
+import { useUserSession } from "@/hooks/useUserSession";
 
 export default function SheetNav() {
+  const { userSession } = useUserSession();
+  const isAuthenticated = userSession.token;
+
   return (
     <Sheet>
       <SheetTrigger asChild className="block sm:hidden">
@@ -45,16 +50,33 @@ export default function SheetNav() {
             <DropdownMenu linksList={NAVBAR_SERVICES} title="Servicios" />
           </div>
           <div className="flex flex-col items-center py-4 gap-8">
-            <Button
-              variant="ghost"
-              className="text-primary-dark hover:text-primary-dark hover:bg-primary-extra-light"
-              size="lg"
-            >
-              Acceder
-            </Button>
-            <Button size="lg" className="text-white bg-primary-dark">
-              Registro
-            </Button>
+            {!isAuthenticated ? (
+              <>
+                <Link to={PAGES_URLS.login}>
+                  <Button
+                    variant="ghost"
+                    className="text-primary-dark hover:text-primary-dark hover:bg-primary-extra-light"
+                    size="lg"
+                  >
+                    Acceder
+                  </Button>
+                </Link>
+                <Link to={PAGES_URLS.register}>
+                  <Button size="lg" className="text-white bg-primary-dark">
+                    Registro
+                  </Button>
+                </Link>
+              </>
+            ) : (
+              <Link>
+                <Button
+                  variant="ghost"
+                  className="text-primary-dark hover:text-primary-dark hover:bg-primary-extra-light"
+                >
+                  Perfil
+                </Button>
+              </Link>
+            )}
           </div>
         </nav>
         <SheetFooter className="text-gray-400 text-sm flex flex-col">
