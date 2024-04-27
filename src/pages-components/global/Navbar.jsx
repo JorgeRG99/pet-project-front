@@ -14,6 +14,7 @@ import SheetNav from "./SheetNav";
 import { NAVBAR_PETS, NAVBAR_SERVICES } from "@/configs/content-config";
 import { PAGES_URLS } from "@/configs/app-routes-config";
 import { useUserSession } from "@/hooks/useUserSession";
+import LoggedNavbarOptions from "./LoggedNavbarOptions";
 
 export function Navbar() {
   const { userSession } = useUserSession();
@@ -93,9 +94,7 @@ export function Navbar() {
             </Link>
           </>
         ) : (
-          <Link>
-            <Button className="text-white bg-primary-dark">Perfil</Button>
-          </Link>
+          <LoggedNavbarOptions />
         )}
       </div>
       <SheetNav />

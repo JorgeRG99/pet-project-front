@@ -1,0 +1,1 @@
+export const emptyObject = (obj) => Object.keys(obj).length === 0

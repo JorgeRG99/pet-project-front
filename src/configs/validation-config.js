@@ -5,7 +5,7 @@ export const USER_VALIDATION_MESSAGES = {
     confirmedPassword: "Las contraseñas no coinciden. Asegúrate de escribir la misma contraseña en ambos campos.",
     name: "Formato de nombre inválido. Solo debe contener letras y espacios.",
     lastName: "Formato de apellido inválido. Solo debe contener letras y espacios.",
-    phone: "Formato de teléfono inválido. Solo debe contener números.",
+    phone: "Formato de teléfono inválido. Solo debe contener 9 dígitos.",
     dni: "Formato de DNI inválido. Debe contener 8 dígitos seguidos de una letra mayúscula (sin espacios ni guiones).",
     birthDate: "Formato de fecha de nacimiento inválido. Debe estar en formato DD/MM/YYYY (dia-mes-año), superando la mayoria de edad (18 años)."
 }

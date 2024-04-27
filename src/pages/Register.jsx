@@ -4,13 +4,13 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { convertKeysToSnakeCase } from "@/utils/utility-functions/fetchKeysFormat";
-import { useRegisterValidation } from "@/hooks/useRegisterValidations";
 import { Validator } from "@/utils/utility-classes/user-data-validator";
 import { USER_VALIDATION_MESSAGES } from "@/configs/validation-config";
+import { useUserValidation } from "@/hooks/useUserValidations";
 
 function Register() {
   const { register } = useAuth();
-  const { validateRegisterData } = useRegisterValidation();
+  const { validateRegisterData } = useUserValidation();
   const [registerData, setRegisterData] = useState({
     email: "",
     password: "",
@@ -34,7 +34,7 @@ function Register() {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const validationResult = validateRegisterData(registerData);
     const hasAnyError = Object.values(validationResult).some(
       (value) => value === false
@@ -48,10 +48,12 @@ function Register() {
       setValidationMessages(errorMessages);
       return;
     } else {
+      setValidationMessages(null);
       const formattedRegisterData = convertKeysToSnakeCase(registerData);
-      register(formattedRegisterData);
+      await register(formattedRegisterData);
     }
   };
+  
   return (
     <main className="flex items-center justify-center w-full">
       <div className="w-full h-full my-16 flex flex-col items-center gap-8">

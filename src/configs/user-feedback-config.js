@@ -1,0 +1,10 @@
+export const SUCCESSFUL_REGISTER = 'Se ha registrado exitosamente'
+export const SUCCESSFUL_LOGIN = 'Se ha iniciado sesión exitosamente'
+export const SUCCESSFUL_LOGOUT = 'Se ha cerrado sesión exitosamente'
+export const SUCCESSFUL_PROFILE_UPDATE = 'Sus datos actualizado exitosamente'
+export const SUCCESSFUL_PASSWORD_UPDATE = 'Su contraseña se ha actualizado!'
+export const SUCCESSFUL_PROFILE_DELETE = 'Su cuenta se ha eliminado exitosamente :('
+export const BAD_CREDENTIALS = 'Credenciales incorrectas';
+export const BAD_PASSWORD = 'Contraseña incorrecta';
+export const SERVER_ERROR = 'Ocurrio un error en el servidor. Por favor, vuelva a intentarlo más tarde';
+export const SERVER_VALIDATION_ERROR = 'Error de validación del servidor.';

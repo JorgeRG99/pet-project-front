@@ -26,7 +26,7 @@ export default function SheetNav() {
       <SheetTrigger asChild className="block sm:hidden">
         <Button variant="outline">Open Menu</Button>
       </SheetTrigger>
-      <SheetContent className="bg-white px-0">
+      <SheetContent className="bg-white px-4">
         <SheetHeader>
           <SheetTitle className="xl:text-5xl lg:text-4xl text-3xl font-alegreya font-bold xl:w-[580px] md:w-[480px] sm:w-[400px] [word-spacing:10px]">
             Pet
@@ -68,13 +68,13 @@ export default function SheetNav() {
                 </Link>
               </>
             ) : (
-              <Link>
-                <Button
-                  variant="ghost"
-                  className="text-primary-dark hover:text-primary-dark hover:bg-primary-extra-light"
+              <Link to={PAGES_URLS.profile}>
+                <div
+                  id="a"
+                  className="text-center text-xl font-alegreya font-semibold text-primary-dark"
                 >
                   Perfil
-                </Button>
+                </div>
               </Link>
             )}
           </div>

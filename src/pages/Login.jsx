@@ -43,7 +43,7 @@ export default function Login() {
               value={credentials.email}
               onChange={handleInputChange}
               placeholder="Email"
-              className="mt-2 mb-4 rounded-lg p-5 w-full border border-gray-300"
+              className="mt-2 mb-4 rounded-lg p-5 px-3 w-full border border-gray-300"
             />
           </div>
           <div className="mb-6">
@@ -54,7 +54,7 @@ export default function Login() {
               value={credentials.password}
               onChange={handleInputChange}
               placeholder="Contraseña"
-              className="mt-2 mb-4 rounded-lg p-5 w-full border border-gray-300"
+              className="mt-2 mb-4 rounded-lg p-5 px-3 w-full border border-gray-300"
             />
           </div>
           <div className="flex items-center space-x-2">

@@ -12,7 +12,9 @@ const API_MIDDLEWARE = '/api'
 export const SESSION_RECOVER = `${API_ORIGIN}${API_MIDDLEWARE}/recoverSession`
 export const USER_REGISTER = `${API_ORIGIN}${API_MIDDLEWARE}/register`
 export const USER_LOGIN = `${API_ORIGIN}${API_MIDDLEWARE}/login`
+export const USER_LOGOUT = `${API_ORIGIN}${API_MIDDLEWARE}/logout`
 export const USER = `${API_ORIGIN}${API_MIDDLEWARE}/user`
+export const CHANGE_PASSWORD = `${API_ORIGIN}${API_MIDDLEWARE}/changePassword`
 
 // ------------ ADOPTIONS -------------
 export const YOUR_ADOPTIONS = `${API_ORIGIN}${API_MIDDLEWARE}/yourAdoptions`
