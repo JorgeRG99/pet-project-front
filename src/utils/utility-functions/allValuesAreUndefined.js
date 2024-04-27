@@ -1,0 +1,1 @@
+export const allValuesAreUndefined = (obj) => Object.values(obj).every((val) => val === undefined || val === null)

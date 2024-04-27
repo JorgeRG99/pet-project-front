@@ -1,4 +1,4 @@
-import { CHANGE_PASSWORD, USER } from "@/configs/api-routes-config";
+import { CHANGE_EMAIL, CHANGE_PASSWORD, USER } from "@/configs/api-routes-config";
 
 export const userUpdate = async (authToken, newData) => {
     try {
@@ -30,6 +30,28 @@ export const userDelete = async (authToken, password) => {
                 'Authorization': `Bearer ${authToken}`
             },
             body: JSON.stringify({ password }),
+        });
+
+        const successfulResponse = await res.json()
+        const response = {
+            status: res.status,
+            response: successfulResponse
+        }
+        
+        return response;
+    } catch (error) {
+        return { status: 500 }
+    }
+}
+
+export const userChangeEmail = async (authToken, data) => {
+    try {
+        const res = await fetch(CHANGE_EMAIL, {
+            method: 'PATCH',
+            headers: {
+                'Authorization': `Bearer ${authToken}`
+            },
+            body: JSON.stringify(data),
         });
 
         const successfulResponse = await res.json()

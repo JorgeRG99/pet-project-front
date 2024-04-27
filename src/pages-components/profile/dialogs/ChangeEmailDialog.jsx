@@ -12,32 +12,33 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { USER_VALIDATION_MESSAGES } from "@/configs/validation-config";
-import { useChangePassword } from "@/hooks/useChangePassword";
+import { UserSessionContext } from "@/context/userSession";
+import { useChangeEmail } from "@/hooks/useChangeEmail";
 import { useUserValidation } from "@/hooks/useUserValidations";
 import { Validator } from "@/utils/utility-classes/user-data-validator";
-import { convertKeysToSnakeCase } from "@/utils/utility-functions/fetchKeysFormat";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
-export default function ChangePasswordDialog() {
+export default function ChangeEmailDialog() {
+  const { userSession } = useContext(UserSessionContext);
   const [open, setOpen] = useState(false);
-  const { validatePassword } = useUserValidation();
-  const [currentPassword, setCurrentPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  const { changePassword } = useChangePassword();
+  const { validateEmail } = useUserValidation();
+  const [newEmail, setNewEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { changeEmail } = useChangeEmail();
   const [validationMessage, setValidationMessage] = useState();
+  const isUpdated = password !== "" && newEmail !== "";
 
-  const handleCurrentPasswordChange = (e) => setCurrentPassword(e.target.value);
-  const handleNewPasswordChange = (e) => setNewPassword(e.target.value);
+  const handlePasswordChange = (e) => setPassword(e.target.value);
+  const handleNewEmailChange = (e) => setNewEmail(e.target.value);
 
-  const handlePasswordUpdate = async () => {
-    if(newPassword === currentPassword) {
-        setValidationMessage({ password: "La nueva contraseña no puede ser igual a la anterior." })
+  const handleEmailUpdate = async () => {
+    if(userSession.email === newEmail) {
+        setValidationMessage({ email: "El nuevo correo electrónico no puede ser igual al anterior." })
         return
     }
-    
     setValidationMessage(null);
-    const validationResult = validatePassword(newPassword);
-    const hasError = !validationResult.password;
+    const validationResult = validateEmail(newEmail);
+    const hasError = !validationResult.email;
 
     if (hasError) {
       const errorMessages = Validator.getValidationMessages(
@@ -47,15 +48,13 @@ export default function ChangePasswordDialog() {
       setValidationMessage(errorMessages);
       return;
     } else {
-      const formattedData = convertKeysToSnakeCase({
-        currentPassword,
-        newPassword,
+      await changeEmail({
+        password,
+        email: newEmail,
       });
-      await changePassword(formattedData);
-      setOpen(false);
 
-      setCurrentPassword("");
-      setNewPassword("");
+      setOpen(false);
+      setNewEmail("");
     }
   };
 
@@ -63,7 +62,7 @@ export default function ChangePasswordDialog() {
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <button className="text-gray-600 hover:bg-gray-200 w-full py-4 text-sm">
-          Cambiar contraseña
+          Cambiar correo electrónico
         </button>
       </DialogTrigger>
       <DialogContent className="w-[550px] bg-white">
@@ -72,7 +71,7 @@ export default function ChangePasswordDialog() {
             ¡Atención!
           </DialogTitle>
           <DialogDescription className="text-black text-[1.2em] text-center">
-            Estás a punto cambiar tu contraseña
+            Estás a punto cambiar tu correo electrónico
           </DialogDescription>
         </DialogHeader>
         <div className="py-8 text-[1em] space-y-6">
@@ -82,23 +81,23 @@ export default function ChangePasswordDialog() {
           </p>
 
           <div>
-            <Label htmlFor="current-password">Contraseña actual</Label>
+            <Label htmlFor="password">Introduce tu contraseña</Label>
             <Input
               type="password"
-              name="current-password"
-              value={currentPassword}
-              onChange={handleCurrentPasswordChange}
-              placeholder="Contraseña actual"
+              name="password"
+              value={password}
+              onChange={handlePasswordChange}
+              placeholder="Contraseña"
               className="mt-2 mb-4 rounded-lg p-5 px-3 w-full border border-gray-300"
             />
-            <Label htmlFor="current-password">Nueva contraseña</Label>
+            <Label htmlFor="email">Nuevo correo electrónico</Label>
             <Input
-              type="password"
-              name="current-password"
-              value={newPassword}
-              onChange={handleNewPasswordChange}
-              error={validationMessage?.password}
-              placeholder="Nueva contraseña"
+              type="email"
+              name="email"
+              value={newEmail}
+              onChange={handleNewEmailChange}
+              error={validationMessage?.email}
+              placeholder="Nueva correo electrónico"
               className="mt-2 mb-4 rounded-lg p-5 px-3 w-full border border-gray-300"
             />
           </div>
@@ -110,10 +109,11 @@ export default function ChangePasswordDialog() {
             </Button>
           </DialogClose>
           <Button
-            onClick={handlePasswordUpdate}
+            disabled={!isUpdated}
+            onClick={handleEmailUpdate}
             className="text-white bg-destructive"
           >
-            Cambiar contraseña
+            Cambiar correo electrónico
           </Button>
         </DialogFooter>
       </DialogContent>

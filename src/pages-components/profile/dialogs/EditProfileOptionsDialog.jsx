@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
-  DialogDescription,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -11,6 +9,7 @@ import {
 } from "@/components/ui/dialog";
 import ChangePasswordDialog from "./ChangePasswordDialog";
 import EditProfileDialog from "./EditProfileDialog";
+import ChangeEmailDialog from "./ChangeEmailDialog";
 
 export default function EditProfileOptionsDialog() {
   return (
@@ -20,22 +19,16 @@ export default function EditProfileOptionsDialog() {
           Editar Perfil
         </Button>
       </DialogTrigger>
-      <DialogContent className="w-[400px] bg-white px-0">
+      <DialogContent className="w-[350px] bg-white px-0">
         <DialogHeader>
           <DialogTitle className=" text-center text-2xl">
             Editar Perfil
           </DialogTitle>
-          <DialogDescription className="text-gray-600 text-sm text-center">
-            Aquí puedes actualizar la información de tu perfil.
-          </DialogDescription>
         </DialogHeader>
         <DialogFooter className="flex sm:space-x-0 sm:flex-col items-center w-full">
-          <DialogClose  asChild>
-            <EditProfileDialog />
-          </DialogClose>
-          <DialogClose asChild>
-            <ChangePasswordDialog />
-          </DialogClose>
+          <EditProfileDialog />
+          <ChangePasswordDialog />
+          <ChangeEmailDialog />
         </DialogFooter>
       </DialogContent>
     </Dialog>

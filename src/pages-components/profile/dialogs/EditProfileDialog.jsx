@@ -14,7 +14,9 @@ import { USER_VALIDATION_MESSAGES } from "@/configs/validation-config";
 import { useUpdateUser } from "@/hooks/useUpdateUser";
 import { useUserValidation } from "@/hooks/useUserValidations";
 import { Validator } from "@/utils/utility-classes/user-data-validator";
+import { allValuesAreUndefined } from "@/utils/utility-functions/allValuesAreUndefined";
 import { convertKeysToSnakeCase } from "@/utils/utility-functions/fetchKeysFormat";
+import { removeUndefinedKeys } from "@/utils/utility-functions/removeUndefinedKeys";
 import { useState } from "react";
 
 export default function EditProfileDialog() {
@@ -23,13 +25,17 @@ export default function EditProfileDialog() {
   const { validateUserUpdate } = useUserValidation();
   const [validationMessages, setValidationMessages] = useState({});
   const { updateUser } = useUpdateUser();
+  const isUpdated = updatedData && !allValuesAreUndefined(updatedData) ? true : false;
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
+    let updatedValue = value
+    
+    if(value === "") updatedValue = undefined
     setUpdatedData((prevState) => {
       return {
         ...prevState,
-        [name]: value,
+        [name]: updatedValue,
       };
     });
   };
@@ -48,7 +54,9 @@ export default function EditProfileDialog() {
       setValidationMessages(errorMessages);
       return;
     } else {
-      const formattedUpdatedData = convertKeysToSnakeCase(updatedData);
+      const cleanUpdatedData = removeUndefinedKeys(updatedData);
+      const formattedUpdatedData = convertKeysToSnakeCase(cleanUpdatedData);
+
       await updateUser(formattedUpdatedData);
       setUpdatedData(null)
       setOpen(false)
@@ -133,6 +141,7 @@ export default function EditProfileDialog() {
           </DialogClose>
           <Button
             onClick={handleSubmit}
+            disabled={!isUpdated}
             className="text-white bg-primary-dark hover:opacity-70 duration-200 transition"
           >
             Actualizar Perfil

@@ -3,6 +3,7 @@ export const SUCCESSFUL_LOGIN = 'Se ha iniciado sesión exitosamente'
 export const SUCCESSFUL_LOGOUT = 'Se ha cerrado sesión exitosamente'
 export const SUCCESSFUL_PROFILE_UPDATE = 'Sus datos actualizado exitosamente'
 export const SUCCESSFUL_PASSWORD_UPDATE = 'Su contraseña se ha actualizado!'
+export const SUCCESSFUL_EMAIL_UPDATE = 'Su correo se ha actualizado!'
 export const SUCCESSFUL_PROFILE_DELETE = 'Su cuenta se ha eliminado exitosamente :('
 export const BAD_CREDENTIALS = 'Credenciales incorrectas';
 export const BAD_PASSWORD = 'Contraseña incorrecta';

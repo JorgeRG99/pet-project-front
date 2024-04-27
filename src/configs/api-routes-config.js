@@ -15,6 +15,7 @@ export const USER_LOGIN = `${API_ORIGIN}${API_MIDDLEWARE}/login`
 export const USER_LOGOUT = `${API_ORIGIN}${API_MIDDLEWARE}/logout`
 export const USER = `${API_ORIGIN}${API_MIDDLEWARE}/user`
 export const CHANGE_PASSWORD = `${API_ORIGIN}${API_MIDDLEWARE}/changePassword`
+export const CHANGE_EMAIL = `${API_ORIGIN}${API_MIDDLEWARE}/changeEmail`
 
 // ------------ ADOPTIONS -------------
 export const YOUR_ADOPTIONS = `${API_ORIGIN}${API_MIDDLEWARE}/yourAdoptions`

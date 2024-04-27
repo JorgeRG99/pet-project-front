@@ -31,6 +31,11 @@ export function useUserValidation() {
         return { password: isPasswordValid }
     }
 
+    const validateEmail = (email) => {
+        const isEmailValid = Validator.validateField(email, USER_VALIDATION_REGEX.email)
+        return { email: isEmailValid}
+    }
+
     const validateUserUpdate = (data) => {
         const isValidDni = data.dni && Validator.validateField(data.dni, USER_VALIDATION_REGEX.dni)
         const isValidName = data.name && Validator.validateField(data.name, USER_VALIDATION_REGEX.name)
@@ -56,5 +61,5 @@ export function useUserValidation() {
         return validationResponse
     }
 
-    return { validateRegisterData, validatePassword, validateUserUpdate }
+    return { validateRegisterData, validatePassword, validateUserUpdate, validateEmail }
 }
