@@ -16,6 +16,7 @@ import DropdownMenu from "./DropdownMenu";
 import { NAVBAR_PETS, NAVBAR_SERVICES } from "@/configs/content-config";
 import { PAGES_URLS } from "@/configs/app-routes-config";
 import { useUserSession } from "@/hooks/useUserSession";
+import LoggedNavbarOptions from "./LoggedNavbarOptions";
 
 export default function SheetNav() {
   const { userSession } = useUserSession();
@@ -68,14 +69,7 @@ export default function SheetNav() {
                 </Link>
               </>
             ) : (
-              <Link to={PAGES_URLS.profile}>
-                <div
-                  id="a"
-                  className="text-center text-xl font-alegreya font-semibold text-primary-dark"
-                >
-                  Perfil
-                </div>
-              </Link>
+              <LoggedNavbarOptions />
             )}
           </div>
         </nav>
