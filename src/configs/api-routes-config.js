@@ -27,11 +27,13 @@ export const CONFIRM_ADOPTIONS = `${API_ORIGIN}${API_MIDDLEWARE}/confirmAdoption
 export const CANCEL_ADOPTION = `${API_ORIGIN}${API_MIDDLEWARE}/cancelAdoption`
 
 // ------------ PETS -------------
-export const ALL_PETS = `${API_ORIGIN}/pets`
-export const PET_BY_ID = `${API_ORIGIN}/pet`
-export const ADD_PET = `${API_ORIGIN}/pet`
-export const UPDATE_PET = `${API_ORIGIN}/pet`
-export const DELETE_PET = `${API_ORIGIN}/pet`
+export const ALL_PETS = `${API_ORIGIN}${API_MIDDLEWARE}/pets`
+export const PET_BY_ID = `${API_ORIGIN}${API_MIDDLEWARE}/pet`
+export const ADD_PET = `${API_ORIGIN}${API_MIDDLEWARE}/pet`
+export const UPDATE_PET = `${API_ORIGIN}${API_MIDDLEWARE}/pet`
+export const DELETE_PET = `${API_ORIGIN}${API_MIDDLEWARE}/pet`
+export const DOGS = `${API_ORIGIN}${API_MIDDLEWARE}/dogs`
+export const CATS = `${API_ORIGIN}${API_MIDDLEWARE}/cats`
 
 // ------------ SPECIES -------------
 export const ALL_SPECIES = `${API_ORIGIN}/species`

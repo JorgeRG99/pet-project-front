@@ -1,14 +1,16 @@
+import { PAGES_URLS } from "./app-routes-config";
+
 // WEB TEXT CONTENT
 export const NAVBAR_PETS = [
     {
         title: "Perros",
-        href: "/perros",
+        href: PAGES_URLS.dogs,
         description:
             "Leales y llenos de energía, descubre tu próximo compañero fiel.",
     },
     {
         title: "Gatos",
-        href: "/gatos",
+        href: PAGES_URLS.cats,
         description:
             "Elegantes y misteriosos, encuentra un compañero con estilo y carácter.",
     },

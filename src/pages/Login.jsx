@@ -4,6 +4,8 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { convertKeysToSnakeCase } from "@/utils/utility-functions/fetchKeysFormat";
+import { Link } from "react-router-dom";
+import { PAGES_URLS } from "@/configs/app-routes-config";
 
 export default function Login() {
   const { login } = useAuth();
@@ -73,6 +75,15 @@ export default function Login() {
             Iniciar Sesión
           </Button>
         </form>
+        <p className="text-sm font-light text-gray-800">
+          ¿No tienes cuenta?{" "}
+          <Link
+            to={PAGES_URLS.register}
+            className="font-medium text-primary-600 hover:underline text-blue-500"
+          >
+            Registrate
+          </Link>
+        </p>
       </div>
       <img
         className="max-h-full w-auto hidden lg:flex"

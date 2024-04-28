@@ -25,6 +25,10 @@ module.exports = {
       },
     },
     extend: {
+      gridTemplateColumns: {
+        "pets": "repeat(auto-fit, minmax(350px, 1fr))",
+        "petsmall": "repeat(auto-fit, minmax(200px, 1fr))",
+      },
       fontFamily: {
         "alegreya": ['Alegreya Sans', 'sans-serif']
       },
