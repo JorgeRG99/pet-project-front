@@ -19,7 +19,7 @@ export default function EditProfileOptionsDialog() {
           Editar Perfil
         </Button>
       </DialogTrigger>
-      <DialogContent className="w-[350px] bg-white px-0">
+      <DialogContent className="sm:w-[350px] w-[90%] bg-white px-0 rounded-lg">
         <DialogHeader>
           <DialogTitle className=" text-center text-2xl">
             Editar Perfil

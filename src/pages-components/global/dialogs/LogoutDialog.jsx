@@ -20,7 +20,7 @@ export default function LogoutDialog() {
           Salir
         </Button>
       </DialogTrigger>
-      <DialogContent className="w-[350px] bg-white">
+      <DialogContent className="w-[350px] bg-white rounded-lg">
         <DialogHeader>
           <DialogTitle className="flex justify-start items-center gap-[75px]">
             <Danger />
@@ -30,7 +30,7 @@ export default function LogoutDialog() {
         <div className="py-8 text-[1.2em] text-center">
           Estás a punto de cerrar sesión. ¿Quieres continuar?
         </div>
-        <DialogFooter className="flex items-center sm:justify-evenly w-full">
+        <DialogFooter className="flex flex-row items-center sm:justify-evenly justify-evenly w-full">
           <DialogTrigger asChild>
             <Button className="text-white bg-primary-dark">Continuar</Button>
           </DialogTrigger>

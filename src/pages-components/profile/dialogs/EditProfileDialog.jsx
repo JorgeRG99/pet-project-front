@@ -70,7 +70,7 @@ export default function EditProfileDialog() {
           Actualizar información de personal
         </button>
       </DialogTrigger>
-      <DialogContent className="w-[550px] bg-white">
+      <DialogContent className="sm:w-[550px] w-[90%] bg-white rounded-lg">
         <DialogHeader>
           <DialogTitle className=" text-center text-2xl">
             Actualizar información de personal
@@ -133,7 +133,7 @@ export default function EditProfileDialog() {
             />
           </div>
         </div>
-        <DialogFooter className="flex items-center sm:justify-evenly w-full">
+        <DialogFooter className="flex items-center sm:justify-evenly w-full sm:gap-0 gap-4">
           <DialogClose asChild>
             <Button className="text-primary-dark bg-primary-extra-light hover:bg-primary duration-200 transition">
               No deseo continuar

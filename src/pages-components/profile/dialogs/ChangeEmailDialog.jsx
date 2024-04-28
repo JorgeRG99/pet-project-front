@@ -65,7 +65,7 @@ export default function ChangeEmailDialog() {
           Cambiar correo electrónico
         </button>
       </DialogTrigger>
-      <DialogContent className="w-[550px] bg-white">
+      <DialogContent className="sm:w-[550px] w-[90%] bg-white rounded-lg">
         <DialogHeader>
           <DialogTitle className=" text-center text-2xl">
             ¡Atención!
@@ -102,7 +102,7 @@ export default function ChangeEmailDialog() {
             />
           </div>
         </div>
-        <DialogFooter className="flex items-center sm:justify-evenly w-full">
+        <DialogFooter className="flex items-center sm:justify-evenly w-full sm:gap-0 gap-4">
           <DialogClose asChild>
             <Button className="text-white bg-primary-dark">
               No deseo continuar
