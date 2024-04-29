@@ -64,7 +64,6 @@ export default function Profile() {
         <TabsContent className="w-full" value="adoptions">
           <YourAdoptions />
         </TabsContent>
-        <TabsContent value="password">Change your password here.</TabsContent>
       </Tabs>
     </main>
   );

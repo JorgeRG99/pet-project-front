@@ -11,6 +11,7 @@ import { useRecoverSession } from "./hooks/useRecoverSession";
 import { Toaster } from "sonner";
 import DogsCatalogue from "./pages/DogsCatalogue";
 import CatsCatalogue from "./pages/CatsCatalogue";
+import Panel from "./pages/Panel";
 
 function App() {
   const { userSession } = useRecoverSession();
@@ -38,6 +39,12 @@ function App() {
           path={PAGES_URLS.login}
           element={
             !isAuthenticated ? <Login /> : <Navigate to={PAGES_URLS.home} />
+          }
+        />
+        <Route
+          path={PAGES_URLS.panel}
+          element={
+            isAuthenticated ? <Panel /> : <Navigate to={PAGES_URLS.login} />
           }
         />
         <Route
