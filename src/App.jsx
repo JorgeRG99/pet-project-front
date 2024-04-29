@@ -9,8 +9,8 @@ import { PAGES_URLS } from "./configs/app-routes-config";
 import Profile from "./pages/Profile";
 import { useRecoverSession } from "./hooks/useRecoverSession";
 import { Toaster } from "sonner";
-import Dogs from "./pages/Dogs";
-import Cats from "./pages/Cats";
+import DogsCatalogue from "./pages/DogsCatalogue";
+import CatsCatalogue from "./pages/CatsCatalogue";
 
 function App() {
   const { userSession } = useRecoverSession();
@@ -31,8 +31,8 @@ function App() {
             !isAuthenticated ? <Register /> : <Navigate to={PAGES_URLS.home} />
           }
         />
-        <Route path={PAGES_URLS.dogs} element={<Dogs />} />
-        <Route path={PAGES_URLS.cats} element={<Cats />} />
+        <Route path={PAGES_URLS.dogs} element={<DogsCatalogue />} />
+        <Route path={PAGES_URLS.cats} element={<CatsCatalogue />} />
         <Route path={PAGES_URLS.hotel} element={<HotelPage />} />
         <Route
           path={PAGES_URLS.login}

@@ -20,14 +20,14 @@ export default function ProfileInfo() {
 
   return (
     <section className="py-8 flex flex-col gap-16 w-full">
-      <div className="flex space-x-8 items-end">
+      <div className="flex xs:space-x-8 xs:justify-start justify-evenly items-end">
         <h2 className="md:text-3xl text-2xl font-medium capitalize text-center">
           {fullName}
         </h2>
         <p className="md:text-xl text-md font-normal text-center">{age} años</p>
       </div>
 
-      <div className="flex flex-col space-y-12">
+      <div className="flex flex-col space-y-12 xs:px-0 px-4">
         <div className="flex items-center space-x-6">
           <Mail />
           <p className="md:text-xl text-md font-normal text-center">{email}</p>

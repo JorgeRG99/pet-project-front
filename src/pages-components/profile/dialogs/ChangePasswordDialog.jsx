@@ -25,16 +25,19 @@ export default function ChangePasswordDialog() {
   const [newPassword, setNewPassword] = useState("");
   const { changePassword } = useChangePassword();
   const [validationMessage, setValidationMessage] = useState();
+  const isUpdated = newPassword !== "";
 
   const handleCurrentPasswordChange = (e) => setCurrentPassword(e.target.value);
   const handleNewPasswordChange = (e) => setNewPassword(e.target.value);
 
   const handlePasswordUpdate = async () => {
-    if(newPassword === currentPassword) {
-        setValidationMessage({ password: "La nueva contraseña no puede ser igual a la anterior." })
-        return
+    if (newPassword === currentPassword) {
+      setValidationMessage({
+        password: "La nueva contraseña no puede ser igual a la anterior.",
+      });
+      return;
     }
-    
+
     setValidationMessage(null);
     const validationResult = validatePassword(newPassword);
     const hasError = !validationResult.password;
@@ -110,6 +113,7 @@ export default function ChangePasswordDialog() {
             </Button>
           </DialogClose>
           <Button
+            disabled={!isUpdated}
             onClick={handlePasswordUpdate}
             className="text-white bg-destructive"
           >

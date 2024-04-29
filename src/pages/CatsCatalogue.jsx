@@ -11,19 +11,21 @@ import { UserSessionContext } from "@/context/userSession";
 import { useCats } from "@/hooks/useCats";
 import Female from "@/icons/Female";
 import Male from "@/icons/Male";
+import RequestAdoptionDialog from "@/pages-components/catalogues/dialog/RequestAdoptionDialog";
 import { timeWithUs } from "@/utils/utility-functions/timeWithUs";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 
-export default function Cats() {
+export default function CatsCatalogue() {
   const { cats } = useCats();
   const { userSession } = useContext(UserSessionContext);
-  const { authToken } = userSession;
+  const { token } = userSession;
 
   return (
     <main className="my-16">
       <h1 className="text-3xl font-bold font-alegreya text-center">
-        Descubre tu Alma Gemela Felina - <span className="text-primary-dark">Gatos en Adopción</span>
+        Descubre tu Alma Gemela Felina -
+        <span className="text-primary-dark"> Gatos en Adopción</span>
       </h1>
       <section className="mt-12 grid grid-cols-petsmall  xs:grid-cols-pets gap-12 px-8">
         {cats?.map((cat) => (
@@ -31,7 +33,7 @@ export default function Cats() {
             <CardHeader>
               <CardTitle className="flex gap-4 items-center">
                 <p className="text-xl">{cat.name}</p>
-                <span>{cat.gender === "male" ? <Male /> : <Female />}</span>
+                <span>{cat.gender === "male" ? <Male size={20} /> : <Female size={20} />}</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -42,22 +44,20 @@ export default function Cats() {
                   <p>Peso: {cat.weight}</p>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <p>{timeWithUs(cat.date_entry)} con nosotros.</p>
+                  <p>{timeWithUs(cat.date_entry)} con nosotros</p>
                   <p className="font-medium text-[1.1em]">{cat.breed}</p>
                 </div>
               </div>
             </CardContent>
             <CardFooter>
-              {authToken ? (
-                <Button className="bg-primary-dark text-white w-full transition durartion-300 hover:bg-primary">
-                  Solicitar adopcion
-                </Button>
-              ) : (
+              {!token ? (
                 <Link to={PAGES_URLS.login} className="w-full">
                   <Button className="bg-primary-dark text-white w-full transition durartion-300 hover:bg-primary">
                     Solicitar adopcion
                   </Button>
                 </Link>
+              ) : (
+                <RequestAdoptionDialog petId={cat.id} petName={cat.name} />
               )}
             </CardFooter>
           </Card>

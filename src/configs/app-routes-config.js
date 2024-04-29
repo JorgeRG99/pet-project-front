@@ -9,4 +9,5 @@ export const PAGES_URLS = {
     training: "/adiestramiento",
     education: " /educacion",
     profile: "/perfil",
+    panel: "/panel"
 }

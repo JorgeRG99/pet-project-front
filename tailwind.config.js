@@ -28,6 +28,7 @@ module.exports = {
       gridTemplateColumns: {
         "pets": "repeat(auto-fit, minmax(350px, 1fr))",
         "petsmall": "repeat(auto-fit, minmax(200px, 1fr))",
+        "adoptions": "repeat(auto-fit, minmax(100px, .8fr))",
       },
       fontFamily: {
         "alegreya": ['Alegreya Sans', 'sans-serif']

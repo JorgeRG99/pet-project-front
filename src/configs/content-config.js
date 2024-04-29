@@ -83,3 +83,23 @@ export const HOME_FAQ = [
         answer: "Preparar tu hogar incluye asegurar un ambiente seguro y acogedor. Esto incluye tener las provisiones necesarias, como comida, una cama, juguetes, y asegurarte de que tu hogar es un espacio seguro para ellos."
     }
 ]
+
+export const ADOPTION_DIALOG = {
+    title: "¡Gracias por tu interés en adoptar una mascota! Aquí te explicamos cómo funciona nuestro proceso de adopción:",
+    step1: {
+        title: "Solicitud de Adopción",
+        description: "Nuestro equipo revisará cuidadosamente tu solicitud para asegurarse de que cada mascota encuentre un hogar adecuado."
+    },
+    step2: {
+        title: "Llamada Telefónica",
+        description: "Te contactaremos por teléfono para discutir más detalles y responder cualquier pregunta que puedas tener."
+    },
+    step3: {
+        title: "Concertar una Cita",
+        description: "Concertaremos una cita para que puedas conocer a tu potencial nueva mascota."
+    },
+    step4: {
+        title: "Confirmación de Adopción",
+        description: "Si todo va bien y decides proceder, finalizaremos el proceso de adopción."
+    }
+}
