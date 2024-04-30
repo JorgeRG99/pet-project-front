@@ -36,13 +36,16 @@ export const DOGS = `${API_ORIGIN}${API_MIDDLEWARE}/dogs`
 export const CATS = `${API_ORIGIN}${API_MIDDLEWARE}/cats`
 
 // ------------ SPECIES -------------
-export const ALL_SPECIES = `${API_ORIGIN}/species`
-export const ADD_SPECIE = `${API_ORIGIN}/specie`
-export const DELETE_SPECIE = `${API_ORIGIN}/specie`
+export const ALL_SPECIES = `${API_ORIGIN}${API_MIDDLEWARE}/species`
+export const ADD_SPECIE = `${API_ORIGIN}${API_MIDDLEWARE}/specie`
+export const DELETE_SPECIE = `${API_ORIGIN}${API_MIDDLEWARE}/specie`
+
+// ------------ BREEDS -------------
+export const BREEDS = `${API_ORIGIN}${API_MIDDLEWARE}/breeds`
 
 // ------------ CARE SERVICES -------------
-export const CARE_SERVICE_BY_ID = `${API_ORIGIN}/service`
-export const ALL_CARE_SERVICES = `${API_ORIGIN}/services`
-export const ADD_CARE_SERVICE = `${API_ORIGIN}/service`
-export const UPDATE_CARE_SERVICE = `${API_ORIGIN}/service`
-export const DELETE_CARE_SERVICE = `${API_ORIGIN}/service`
+export const CARE_SERVICE_BY_ID = `${API_ORIGIN}${API_MIDDLEWARE}/service`
+export const ALL_CARE_SERVICES = `${API_ORIGIN}${API_MIDDLEWARE}/services`
+export const ADD_CARE_SERVICE = `${API_ORIGIN}${API_MIDDLEWARE}/service`
+export const UPDATE_CARE_SERVICE = `${API_ORIGIN}${API_MIDDLEWARE}/service`
+export const DELETE_CARE_SERVICE = `${API_ORIGIN}${API_MIDDLEWARE}/service`

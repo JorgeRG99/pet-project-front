@@ -22,7 +22,7 @@ export default function DeletePetDialog({ pet, setPets }) {
           <Delete />
         </Button>
       </DialogTrigger>
-      <DialogContent className="w-[550px] bg-white">
+      <DialogContent className="sm:w-[450px] rounded-lg w-[90%] bg-white">
         <DialogHeader>
           <DialogTitle className=" text-center text-2xl">
             ¡Atención!
@@ -32,10 +32,8 @@ export default function DeletePetDialog({ pet, setPets }) {
           </DialogDescription>
         </DialogHeader>
         <div className="py-6 text-center">
-          <p>
-            Esta es una operación irreversible. ¿Estás seguro de que quieres
-            continuar?
-          </p>
+          <p>Esta es una operación irreversible</p>
+          <p>¿Estás seguro de que quieres continuar?</p>
         </div>
 
         <DialogFooter className="flex flex-row items-center sm:justify-evenly justify-evenly w-full">
@@ -44,7 +42,10 @@ export default function DeletePetDialog({ pet, setPets }) {
               Cerrar
             </Button>
           </DialogTrigger>
-          <Button onClick={handlePetDelete} className="text-white hover:opacity-75 transition duration-200 bg-destructive">
+          <Button
+            onClick={handlePetDelete}
+            className="text-white hover:opacity-75 transition duration-200 bg-destructive"
+          >
             Eliminar mascota
           </Button>
         </DialogFooter>

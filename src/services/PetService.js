@@ -1,4 +1,4 @@
-import { ALL_PETS, CATS, DELETE_PET, DOGS, UPDATE_PET } from "@/configs/api-routes-config";
+import { ADD_PET, ALL_PETS, CATS, DELETE_PET, DOGS, UPDATE_PET } from "@/configs/api-routes-config";
 
 export const getAllPets = async (token) => {
     try {
@@ -37,6 +37,29 @@ export const getCats = async () => {
 
         const response = await res.json()
         return response.response;
+    } catch (error) {
+        return { status: 500 }
+    }
+}
+
+export const registerPet = async (token, data) => {
+    try {
+        const res = await fetch(ADD_PET, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(data),
+        });
+
+        const successfulResponse = await res.json()
+        const response = {
+            status: res.status,
+            response: successfulResponse.response
+        }
+
+        return response;
     } catch (error) {
         return { status: 500 }
     }

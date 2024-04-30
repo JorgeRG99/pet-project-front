@@ -11,8 +11,10 @@ export const USER_VALIDATION_MESSAGES = {
 }
 
 export const PET_VALIDATION_MESSAGES = {
+    name: "Formato de nombre inválido. Solo debe contener letras y espacios.",
     additionalInfo: "El campo debe contener entre 10 y 150 caracteres.",
     weight: "El campo debe ser un número entre 1 y 50, con un decimal.",
+    age: "El campo debe ser un número entre 1 y 25.",
 }
 
 // VALIDATION REGEX
@@ -26,6 +28,8 @@ export const USER_VALIDATION_REGEX = {
 }
 
 export const PET_VALIDATION_REGEX = {
+    name: /^[a-zA-Z\s]{3,}$/,
     additionalInfo: /^.{10,150}$/,
-    weight: /^(?:[1-9](?:\.\d)?|[1-4][0-9](?:\.\d)?|50(?:\.0)?)$/
+    weight: /^(?:[1-9](?:\.\d)?|[1-4][0-9](?:\.\d)?|50(?:\.0)?)$/,
+    age: /^(?:[1-9]|1[0-9]|2[0-5])(?:\.\d)?$/,
 }

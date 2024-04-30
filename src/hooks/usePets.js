@@ -1,6 +1,6 @@
-import { SERVER_ERROR, SERVER_VALIDATION_ERROR, SUCCESSFUL_PET_UPDATE } from "@/configs/user-feedback-config";
+import { SERVER_ERROR, SERVER_VALIDATION_ERROR, SUCCESSFUL_PET_REGISTER, SUCCESSFUL_PET_UPDATE } from "@/configs/user-feedback-config";
 import { UserSessionContext } from "@/context/userSession";
-import { deletePet, getAllPets, updatePet } from "@/services/PetService";
+import { deletePet, getAllPets, registerPet, updatePet } from "@/services/PetService";
 import { convertKeysToSnakeCase } from "@/utils/utility-functions/fetchKeysFormat";
 import { useContext } from "react";
 import { toast } from "sonner";
@@ -11,6 +11,19 @@ export function usePets() {
     const allPets = async () => {
         const res = await getAllPets(userSession.token);
         return res.result
+    }
+
+    const petRegister = async (data, setPetsData) => {
+        const res = await registerPet(userSession.token, data)
+        console.log(res)
+        if(res.status === 201){
+            setPetsData(prevState => [...prevState, data])
+            toast.info(SUCCESSFUL_PET_REGISTER);
+        } else if (res.status < 500) {
+            toast.error(SERVER_VALIDATION_ERROR);
+        } else {
+            toast.error(SERVER_ERROR);
+        }
     }
 
     const petUpdate = async (data, setPetsData, petId) => {
@@ -41,5 +54,5 @@ export function usePets() {
         }
     }
 
-    return { allPets, petUpdate, petDelete }
+    return { allPets, petUpdate, petDelete, petRegister }
 }
