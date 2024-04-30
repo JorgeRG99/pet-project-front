@@ -91,7 +91,6 @@ export default function YourAdoptions() {
                     />
                   </div>
                 </CardContent>
-                <CardFooter className="flex justify-between"></CardFooter>
               </Card>
             );
           })}

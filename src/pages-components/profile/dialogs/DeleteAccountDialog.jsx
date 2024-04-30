@@ -51,11 +51,11 @@ export default function DeleteAccountDialog() {
         </div>
         <DialogFooter className="flex items-center sm:justify-evenly w-full">
           <DialogTrigger asChild>
-            <Button className="text-white bg-primary-dark">
+            <Button className="text-white bg-primary-dark hover:opacity-75 transition duration-200">
               No deseo continuar
             </Button>
           </DialogTrigger>
-          <Button onClick={handleDelete} className="text-white bg-destructive">
+          <Button onClick={handleDelete} className="text-white bg-destructive hover:opacity-75 transition duration-200">
             Eliminar cuenta
           </Button>
         </DialogFooter>

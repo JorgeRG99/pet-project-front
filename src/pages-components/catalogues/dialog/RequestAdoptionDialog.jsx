@@ -55,14 +55,14 @@ export default function RequestAdoptionDialog({ petId, petName }) {
         </div>
         <DialogFooter className="flex flex-row items-center sm:justify-evenly justify-evenly w-full">
           <DialogClose asChild>
-            <Button className="text-white bg-destructive">
+            <Button className="text-white bg-destructive hover:opacity-75 transition duration-200">
               Prefiero no hacerlo
             </Button>
           </DialogClose>
           <DialogClose asChild>
             <Button
               onClick={handleAdoptionRequest}
-              className="text-white bg-primary-dark"
+              className="text-white bg-primary-dark hover:opacity-75 transition duration-200"
             >
               Quiero adoptar
             </Button>

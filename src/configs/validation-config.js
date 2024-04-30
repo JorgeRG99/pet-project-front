@@ -10,6 +10,11 @@ export const USER_VALIDATION_MESSAGES = {
     birthDate: "Formato de fecha de nacimiento inválido. Debe estar en formato DD/MM/YYYY (dia-mes-año), superando la mayoria de edad (18 años)."
 }
 
+export const PET_VALIDATION_MESSAGES = {
+    additionalInfo: "El campo debe contener entre 10 y 150 caracteres.",
+    weight: "El campo debe ser un número entre 1 y 50, con un decimal.",
+}
+
 // VALIDATION REGEX
 export const USER_VALIDATION_REGEX = {
     name: /^[a-zA-Z\s]{3,}$/,
@@ -18,4 +23,9 @@ export const USER_VALIDATION_REGEX = {
     dni: /^[0-9]{8}[A-Z]$/,
     phone: /^[0-9]{9}$/,
     birth: /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
+}
+
+export const PET_VALIDATION_REGEX = {
+    additionalInfo: /^.{10,150}$/,
+    weight: /^(?:[1-9](?:\.\d)?|[1-4][0-9](?:\.\d)?|50(?:\.0)?)$/
 }

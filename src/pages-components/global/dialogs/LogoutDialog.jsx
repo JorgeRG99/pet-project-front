@@ -32,9 +32,9 @@ export default function LogoutDialog() {
         </div>
         <DialogFooter className="flex flex-row items-center sm:justify-evenly justify-evenly w-full">
           <DialogTrigger asChild>
-            <Button className="text-white bg-primary-dark">Continuar</Button>
+            <Button className="text-white bg-primary-dark hover:opacity-75 transition duration-200">Continuar</Button>
           </DialogTrigger>
-          <Button onClick={logout} className="text-white bg-destructive">
+          <Button onClick={logout} className="text-white bg-destructive hover:opacity-75 transition duration-200">
             Cerrar sesión
           </Button>
         </DialogFooter>

@@ -13,3 +13,5 @@ export const SERVER_VALIDATION_ERROR = 'Error de validación del servidor.';
 export const SUCCESSFUL_ADOPTION = "Su proceso de adopcion ha comenzado!";
 export const ADOPTIONS_PENDING = 'No puedes solicitar una adopcion si ya hay una pendiente';
 export const ADOPTION_CANCELLED = 'La adopcion ha sido cancelada';
+export const SUCCESSFUL_PET_UPDATE = 'Mascota se ha actualizado exitosamente'
+export const SUCCESSFUL_PET_DELETE = 'Mascota se ha eliminado exitosamente'
