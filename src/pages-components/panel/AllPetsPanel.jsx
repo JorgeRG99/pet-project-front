@@ -32,10 +32,10 @@ export default function AllPetsPanel() {
       <AddPetDialog setPets={setPets} />
       <div className="w-full grid xs:grid-cols-pets grid-cols-petsmall gap-12">
         {pets?.map((pet) => (
-          <Card className="w-full flex flex-col justify-evenly" key={pet.id}>
+          <Card className="w-full flex flex-col justify-evenly" key={crypto.randomUUID()}>
             <CardHeader>
               <CardTitle className="flex gap-4 items-center">
-                <p className="text-xl">{pet.name}</p>
+                <p className="text-xl capitalize">{pet.name}</p>
                 <span>
                   {pet.gender === "male" ? (
                     <Male size={20} />
@@ -58,7 +58,7 @@ export default function AllPetsPanel() {
                 </div>
               </div>
             </CardContent>
-            <CardFooter className="flex gap-10">
+            <CardFooter className="flex gap-3">
               <EditPetInfoDialog pet={pet} setPets={setPets} />
               <DeletePetDialog pet={pet} setPets={setPets} />
             </CardFooter>

@@ -29,10 +29,10 @@ export default function DogsCatalogue() {
       </h1>
       <section className="mt-12 grid xs:grid-cols-pets grid-cols-petsmall gap-12 px-8">
         {dogs?.map((dog) => (
-          <Card className="w-full flex flex-col justify-evenly" key={dog.id}>
+          <Card className="w-full flex flex-col justify-evenly" key={crypto.randomUUID()}>
             <CardHeader>
               <CardTitle className="flex gap-4 items-center">
-                <p className="text-xl">{dog.name}</p>
+                <p className="text-xl capitalize">{dog.name}</p>
                 <span>{dog.gender === "male" ? <Male /> : <Female />}</span>
               </CardTitle>
             </CardHeader>

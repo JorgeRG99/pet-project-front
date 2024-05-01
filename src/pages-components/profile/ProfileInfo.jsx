@@ -19,7 +19,7 @@ export default function ProfileInfo() {
   const registeredSince = `${ROLES[role]} desde ${createdAt[0]} de ${createdAt[1]}`;
 
   return (
-    <section className="py-8 flex flex-col gap-16 w-full">
+    <section className="py-8 flex flex-col gap-16 w-[400px] md:w-[580px] xs:w-[450px]">
       <div className="flex xs:space-x-8 xs:justify-start justify-evenly items-end">
         <h2 className="md:text-3xl text-2xl font-medium capitalize text-center">
           {fullName}

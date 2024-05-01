@@ -1,31 +1,20 @@
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useAdoption } from "@/hooks/useAdoption";
 import Check from "@/icons/Check";
 import Female from "@/icons/Female";
 import Male from "@/icons/Male";
 import Pending from "@/icons/Pending";
 import { useEffect, useState } from "react";
-import CancelAdoptionDialog from "./dialogs/CancelAdoptionDialog";
-import { Link } from "react-router-dom";
-import { PAGES_URLS } from "@/configs/app-routes-config";
-import AdoptionCompleted from "@/pages-components/global/AdoptionCompleted";
-import AdoptionCancelled from "@/pages-components/global/AdoptionCancelled";
+import ManageAdoptionDialog from "./dialogs/ManageAdoptionDialog";
 import Cross from "@/icons/Cross";
 
-export default function YourAdoptions() {
+export default function AdoptionsPanel() {
   const [adoptions, setAdoptions] = useState(null);
-  const { yourAdoptionsFetch } = useAdoption();
+  const { allAdoptions } = useAdoption();
 
   useEffect(() => {
     const getAdoptions = async () => {
-      const fetchedAdoptions = await yourAdoptionsFetch();
+      const fetchedAdoptions = await allAdoptions();
       setAdoptions(fetchedAdoptions);
     };
 
@@ -35,14 +24,14 @@ export default function YourAdoptions() {
   return (
     <section>
       {adoptions?.length > 0 ? (
-        <div className="mt-12 flex flex-row flex-wrap justify-center gap-12 px-8">
+        <div className="w-full grid xs:grid-cols-pets grid-cols-petsmall gap-12">
           {adoptions.map((adoption) => {
             const { status, pet } = adoption;
 
             return (
               <Card
-                className="w-full xs:w-[400px] flex flex-col justify-evenly"
-                key={adoption.id}
+                className="max-w-[450px] flex flex-col justify-evenly"
+                key={crypto.randomUUID()}
               >
                 <CardHeader>
                   <CardTitle className="flex gap-8 items-center">
@@ -60,7 +49,7 @@ export default function YourAdoptions() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="flex gap-20">
-                  <div className="space-y-4">
+                <div className="space-y-4">
                     <h3 className="text-xl font-semibold">Proceso</h3>
 
                     <div className="space-y-4">
@@ -92,7 +81,7 @@ export default function YourAdoptions() {
                     </div>
                   </div>
 
-                  <div className="flex flex-col justify-between md:gap-0 gap-10">
+                  <div className="flex flex-col justify-between">
                     <div className="flex flex-col gap-4">
                       <h3>
                         <span className="font-semibold">Especie:</span>{" "}
@@ -102,14 +91,11 @@ export default function YourAdoptions() {
                         <span className="font-semibold">Raza:</span> {pet.breed}
                       </h3>
                     </div>
-                    {status === "cancelled" && <AdoptionCancelled />}
-                    {status === "confirmed" && <AdoptionCompleted />}
-                    {status !== "cancelled" && status !== "confirmed" && (
-                      <CancelAdoptionDialog
-                        adoptionId={adoption.id}
-                        setAdoptions={setAdoptions}
-                      />
-                    )}
+                    <ManageAdoptionDialog
+                      adoptionId={adoption.id}
+                      setAdoptions={setAdoptions}
+                      status={status}
+                    />
                   </div>
                 </CardContent>
               </Card>
@@ -118,12 +104,7 @@ export default function YourAdoptions() {
         </div>
       ) : (
         <div className="flex flex-col justify-evenly items-center h-[15em]">
-          <h3 className="text-xl">Aun no has realizado alguna adopción</h3>
-          <Link to={PAGES_URLS.dogs}>
-            <Button className="text-white bg-primary hover:opacity-80 transition duration-200">
-              Conoce a tu proximo compañero
-            </Button>
-          </Link>
+          <h3 className="text-xl">Aun no se ha realizado ninguna adopción</h3>
         </div>
       )}
     </section>

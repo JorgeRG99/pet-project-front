@@ -29,10 +29,10 @@ export default function CatsCatalogue() {
       </h1>
       <section className="mt-12 grid grid-cols-petsmall  xs:grid-cols-pets gap-12 px-8">
         {cats?.map((cat) => (
-          <Card className="w-full flex flex-col justify-evenly" key={cat.id}>
+          <Card className="w-full flex flex-col justify-evenly" key={crypto.randomUUID()}>
             <CardHeader>
               <CardTitle className="flex gap-4 items-center">
-                <p className="text-xl">{cat.name}</p>
+                <p className="text-xl capitalize">{cat.name}</p>
                 <span>{cat.gender === "male" ? <Male size={20} /> : <Female size={20} />}</span>
               </CardTitle>
             </CardHeader>

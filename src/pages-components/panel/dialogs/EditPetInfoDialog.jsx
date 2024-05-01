@@ -62,7 +62,7 @@ export default function EditPetInfoDialog({ pet, setPets }) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="text-white bg-primary-dark hover:opacity-75 transition duration-200 w-[90%]">
+        <Button className="text-white bg-primary-dark hover:opacity-75 transition duration-200 w-full">
           Editar
         </Button>
       </DialogTrigger>

@@ -24,9 +24,9 @@ export default function Profile() {
 
       <Tabs
         defaultValue="profile"
-        className="w-[400px] md:w-[580px] xs:w-[450px] flex flex-col items-center"
+        className="w-full flex flex-col items-center"
       >
-        <TabsList className="p-2 h-auto w-full bg-white shadow">
+        <TabsList className="p-2 h-auto w-[400px] md:w-[580px] xs:w-[450px] bg-white shadow">
           <TabsTrigger
             className="md:text-xl xs:text-sm text-[.7em] font-normal data-[state=active]:text-white data-[state=active]:bg-primary-dark"
             value="profile"
@@ -58,7 +58,7 @@ export default function Profile() {
             Adopciones
           </TabsTrigger>
         </TabsList>
-        <TabsContent className="w-full" value="profile">
+        <TabsContent className="w-full flex items-center justify-center" value="profile">
           <ProfileInfo />
         </TabsContent>
         <TabsContent className="w-full" value="adoptions">

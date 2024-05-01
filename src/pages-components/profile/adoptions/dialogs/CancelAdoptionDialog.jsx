@@ -21,13 +21,16 @@ export default function CancelAdoptionDialog({ adoptionId, setAdoptions }) {
   const handleAdoptionCancel = async () => {
     const res = await adoptionCancel(adoptionId);
 
-
     if (res.status === 201) {
       toast.info(ADOPTION_CANCELLED);
 
-      setAdoptions((prev) =>
-        prev.filter((adoption) => adoption.id !== adoptionId)
-      );
+      setAdoptions((prev) => {
+        let adoption = prev.find((adoption) => adoption.id === adoptionId);
+        const adoptions = prev.filter((adoption) => adoption.id !== adoptionId);
+        adoption.status = "cancelled";
+        
+        return [...adoptions, adoption];
+      });
     } else {
       toast.error(SERVER_ERROR);
     }

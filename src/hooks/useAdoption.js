@@ -1,10 +1,25 @@
-import { cancelAdoption, requestAdoption, yourAdoptions } from "@/services/AdoptionService";
+import { acceptAdoption, cancelAdoption, confirmAdoption, getAllAdoptions, requestAdoption, yourAdoptions } from "@/services/AdoptionService";
 import { useUserSession } from "./useUserSession";
 import { toast } from "sonner";
 import { ADOPTIONS_PENDING, SERVER_ERROR, SUCCESSFUL_ADOPTION } from "@/configs/user-feedback-config";
 
 export function useAdoption() {
     const { userSession } = useUserSession()
+
+    const adoptionAccept = async (id) => {
+        const res = await acceptAdoption(userSession.token, id)
+        return res
+    }
+
+    const adoptionConfirm = async (id) => {
+        const res = await confirmAdoption(userSession.token, id)
+        return res
+    }
+
+    const allAdoptions = async () => {
+        const res = await getAllAdoptions(userSession.token)
+        return res.response.result
+    }
 
     const adopt = async (data) => {
         const res = await requestAdoption(userSession.token, data)
@@ -28,5 +43,5 @@ export function useAdoption() {
         return res
     }
 
-    return { adopt, yourAdoptionsFetch, adoptionCancel }
+    return { adopt, yourAdoptionsFetch, adoptionCancel, allAdoptions, adoptionAccept, adoptionConfirm }
 }

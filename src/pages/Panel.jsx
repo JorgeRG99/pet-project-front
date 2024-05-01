@@ -1,4 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import AdoptionsPanel from "@/pages-components/panel/AdoptionsPanel";
 import AllPetsPanel from "@/pages-components/panel/AllPetsPanel";
 
 export default function Panel() {
@@ -11,6 +12,12 @@ export default function Panel() {
             value="pets"
           >
             Mascotas
+          </TabsTrigger>
+          <TabsTrigger
+            className="md:text-xl xs:text-[.9em] text-[.7em] w-[17%] sm:w-auto font-normal data-[state=active]:text-white data-[state=active]:bg-primary-dark"
+            value="adoptions"
+          >
+            Adopciones
           </TabsTrigger>
           <TabsTrigger
             className="md:text-xl xs:text-[.9em] text-[.7em] w-[13%] sm:w-auto font-normal data-[state=active]:text-white data-[state=active]:bg-primary-dark"
@@ -30,15 +37,12 @@ export default function Panel() {
           >
             Historial
           </TabsTrigger>
-          <TabsTrigger
-            className="md:text-xl xs:text-[.9em] text-[.7em] w-[17%] sm:w-auto font-normal data-[state=active]:text-white data-[state=active]:bg-primary-dark"
-            value="adoptions"
-          >
-            Adopciones
-          </TabsTrigger>
         </TabsList>
         <TabsContent className="w-full" value="pets">
           <AllPetsPanel />
+        </TabsContent>
+        <TabsContent className="w-full" value="adoptions">
+          <AdoptionsPanel />
         </TabsContent>
       </Tabs>
     </main>

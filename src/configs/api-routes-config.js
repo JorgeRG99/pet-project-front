@@ -18,12 +18,13 @@ export const CHANGE_PASSWORD = `${API_ORIGIN}${API_MIDDLEWARE}/changePassword`
 export const CHANGE_EMAIL = `${API_ORIGIN}${API_MIDDLEWARE}/changeEmail`
 
 // ------------ ADOPTIONS -------------
+export const ALL_ADOPTIONS = `${API_ORIGIN}${API_MIDDLEWARE}/allAdoptions`
 export const YOUR_ADOPTIONS = `${API_ORIGIN}${API_MIDDLEWARE}/yourAdoptions`
 export const REQUEST_ADOPTION = `${API_ORIGIN}${API_MIDDLEWARE}/requestAdoption`
 export const ADOPTION_BY_USER = `${API_ORIGIN}${API_MIDDLEWARE}/adoptionsByUser`
 export const ADOPTION_BY_PET = `${API_ORIGIN}${API_MIDDLEWARE}/adoptionsByPet`
 export const ACCEPT_ADOPTION = `${API_ORIGIN}${API_MIDDLEWARE}/acceptAdoption`
-export const CONFIRM_ADOPTIONS = `${API_ORIGIN}${API_MIDDLEWARE}/confirmAdoption`
+export const CONFIRM_ADOPTION = `${API_ORIGIN}${API_MIDDLEWARE}/confirmAdoption`
 export const CANCEL_ADOPTION = `${API_ORIGIN}${API_MIDDLEWARE}/cancelAdoption`
 
 // ------------ PETS -------------
