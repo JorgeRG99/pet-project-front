@@ -84,13 +84,13 @@ export function Navbar() {
             <Link to={PAGES_URLS.login}>
               <Button
                 variant="ghost"
-                className="text-primary-dark hover:text-primary-dark hover:bg-primary-extra-light"
+                className="text-primary-dark hover:text-primary-dark hover:bg-primary-extra-light transition duration-200 active:scale-90"
               >
                 Acceder
               </Button>
             </Link>
             <Link to={PAGES_URLS.register}>
-              <Button className="text-white bg-primary-dark">Registro</Button>
+              <Button className="text-white bg-primary-dark hover:opacity-80 transition duration-200 active:scale-90">Registro</Button>
             </Link>
           </>
         ) : (

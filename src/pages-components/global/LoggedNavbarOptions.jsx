@@ -15,7 +15,7 @@ export default function LoggedNavbarOptions() {
   return (
     <section className="flex items-center sm:space-x-4 sm:flex-row flex-col">
       <Link to={redirectUrl} className="py-6 sm:py-0 font-normal">
-        <Button className="text-white bg-primary-dark hover:opacity-75 transition duration-200">
+        <Button className="text-white bg-primary-dark hover:opacity-75 transition duration-200 active:scale-95">
           {buttonText}
         </Button>
       </Link>

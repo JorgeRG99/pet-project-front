@@ -18,7 +18,7 @@ export default function DeletePetDialog({ pet, setPets }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="text-white bg-destructive hover:opacity-75 transition duration-200 w-[50px]">
+        <Button className="text-white bg-destructive hover:opacity-75 transition duration-200 w-[50px] active:scale-95">
           <Delete />
         </Button>
       </DialogTrigger>

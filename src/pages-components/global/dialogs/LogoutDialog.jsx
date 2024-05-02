@@ -16,7 +16,7 @@ export default function LogoutDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="text-white bg-destructive hover:opacity-70 transition duration-300">
+        <Button className="text-white bg-destructive hover:opacity-70 transition duration-300 active:scale-90">
           Salir
         </Button>
       </DialogTrigger>
@@ -32,9 +32,9 @@ export default function LogoutDialog() {
         </div>
         <DialogFooter className="flex flex-row items-center sm:justify-evenly justify-evenly w-full">
           <DialogTrigger asChild>
-            <Button className="text-white bg-primary-dark hover:opacity-75 transition duration-200">Continuar</Button>
+            <Button className="text-white bg-primary-dark hover:opacity-75 transition duration-200 active:scale-95">Continuar</Button>
           </DialogTrigger>
-          <Button onClick={logout} className="text-white bg-destructive hover:opacity-75 transition duration-200">
+          <Button onClick={logout} className="text-white bg-destructive hover:opacity-75 transition duration-200 active:scale-95">
             Cerrar sesión
           </Button>
         </DialogFooter>

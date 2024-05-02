@@ -77,7 +77,7 @@ export default function ManageAdoptionDialog({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button disabled={status === "confirmed" || status === "cancelled"} className="text-white bg-primary-dark hover:opacity-75 transition duration-200">
+        <Button disabled={status === "confirmed" || status === "cancelled"} className="text-white bg-primary-dark hover:opacity-75 transition duration-200 active:scale-95">
           Gestionar
         </Button>
       </DialogTrigger>

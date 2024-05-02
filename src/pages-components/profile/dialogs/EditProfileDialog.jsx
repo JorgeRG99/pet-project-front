@@ -135,14 +135,14 @@ export default function EditProfileDialog() {
         </div>
         <DialogFooter className="flex items-center sm:justify-evenly w-full sm:gap-0 gap-4">
           <DialogClose asChild>
-            <Button className="text-primary-dark bg-primary-extra-light hover:bg-primary duration-200 transition">
+            <Button className="text-primary-dark bg-primary-extra-light hover:bg-primary duration-200 transition active:scale-95">
               No deseo continuar
             </Button>
           </DialogClose>
           <Button
             onClick={handleSubmit}
             disabled={!isUpdated}
-            className="text-white bg-primary-dark hover:opacity-70 duration-200 transition"
+            className="text-white bg-primary-dark hover:opacity-70 duration-200 transition active:scale-95"
           >
             Actualizar Perfil
           </Button>

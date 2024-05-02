@@ -104,14 +104,14 @@ export default function ChangeEmailDialog() {
         </div>
         <DialogFooter className="flex items-center sm:justify-evenly w-full sm:gap-0 gap-4">
           <DialogClose asChild>
-            <Button className="text-white bg-primary-dark hover:opacity-75 transition duration-200">
+            <Button className="text-white bg-primary-dark hover:opacity-75 transition duration-200 active:scale-95">
               No deseo continuar
             </Button>
           </DialogClose>
           <Button
             disabled={!isUpdated}
             onClick={handleEmailUpdate}
-            className="text-white bg-destructive hover:opacity-75 transition duration-200"
+            className="text-white bg-destructive hover:opacity-75 transition duration-200 active:scale-95"
           >
             Cambiar correo electrónico
           </Button>

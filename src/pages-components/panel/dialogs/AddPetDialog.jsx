@@ -94,7 +94,7 @@ export default function AddPetDialog({ setPets }) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="text-white bg-primary-dark hover:opacity-75 transition duration-200 w-[10em]">
+        <Button className="text-white bg-primary-dark hover:opacity-75 transition duration-200 w-[10em] active:scale-95">
           Añadir mascota
         </Button>
       </DialogTrigger>

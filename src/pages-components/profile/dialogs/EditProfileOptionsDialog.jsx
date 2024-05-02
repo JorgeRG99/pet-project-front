@@ -15,7 +15,7 @@ export default function EditProfileOptionsDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="text-white bg-primary-dark hover:opacity-90">
+        <Button className="text-white bg-primary-dark hover:opacity-90 transition duration-200 active:scale-95">
           Editar Perfil
         </Button>
       </DialogTrigger>

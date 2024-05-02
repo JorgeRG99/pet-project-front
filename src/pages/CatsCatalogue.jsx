@@ -52,7 +52,7 @@ export default function CatsCatalogue() {
             <CardFooter>
               {!token ? (
                 <Link to={PAGES_URLS.login} className="w-full">
-                  <Button className="bg-primary-dark text-white w-full transition durartion-300 hover:bg-primary">
+                  <Button className="bg-primary-dark text-white w-full transition durartion-300 hover:bg-primary active:scale-95">
                     Solicitar adopcion
                   </Button>
                 </Link>

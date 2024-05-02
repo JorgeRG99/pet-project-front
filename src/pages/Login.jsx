@@ -70,7 +70,7 @@ export default function Login() {
           </div>
           <Button
             type="submit"
-            className="w-full mt-6 bg-primary-dark text-primary-foreground hover:bg-primary transition duration-300"
+            className="w-full mt-6 bg-primary-dark text-primary-foreground hover:opacity-80 transition duration-200 active:scale-95"
           >
             Iniciar Sesión
           </Button>

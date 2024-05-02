@@ -162,7 +162,7 @@ function Register() {
           </form>
           <Button
             onClick={handleSubmit}
-            className="w-full mt-8 bg-primary-dark text-primary-foreground hover:bg-primary"
+            className="w-full mt-8 bg-primary-dark text-primary-foreground hover:opacity-80 transition duration-200 active:scale-95"
           >
             Registrarse
           </Button>

@@ -20,7 +20,7 @@ export default function RequestAdoptionDialog({ petId, petName }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="bg-primary-dark text-white w-full transition durartion-300 hover:bg-primary">
+        <Button className="bg-primary-dark text-white w-full transition durartion-300 hover:bg-primary active:scale-95">
           Solicitar adopcion
         </Button>
       </DialogTrigger>

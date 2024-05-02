@@ -1,5 +1,9 @@
+import HotelHeroSection from "@/pages-components/hotel/HotelHeroSection";
+
 export default function HotelPage() {
   return (
-    <div>Hotel</div>
-  )
+    <main>
+      <HotelHeroSection />
+    </main>
+  );
 }
