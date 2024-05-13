@@ -36,6 +36,16 @@ export const DELETE_PET = `${API_ORIGIN}${API_MIDDLEWARE}/pet`
 export const DOGS = `${API_ORIGIN}${API_MIDDLEWARE}/dogs`
 export const CATS = `${API_ORIGIN}${API_MIDDLEWARE}/cats`
 
+// ------------ EXTERNAL PETS -------------
+export const YOUR_PETS = `${API_ORIGIN}${API_MIDDLEWARE}/yourPets`
+export const YOUR_PETS_WITH_DELETED = `${API_ORIGIN}${API_MIDDLEWARE}/yourPetsWithDeleted`
+export const YOUR_CATS = `${API_ORIGIN}${API_MIDDLEWARE}/yourCats`
+export const YOUR_DOGS = `${API_ORIGIN}${API_MIDDLEWARE}/yourDogs`
+export const ADD_YOUR_PET = `${API_ORIGIN}${API_MIDDLEWARE}/addPet`
+export const UPDATE_YOUR_PET = `${API_ORIGIN}${API_MIDDLEWARE}/updatePet`
+export const DELETE_YOUR_PET = `${API_ORIGIN}${API_MIDDLEWARE}/deletePet`
+
+
 // ------------ SPECIES -------------
 export const ALL_SPECIES = `${API_ORIGIN}${API_MIDDLEWARE}/species`
 export const ADD_SPECIE = `${API_ORIGIN}${API_MIDDLEWARE}/specie`
@@ -45,8 +55,8 @@ export const DELETE_SPECIE = `${API_ORIGIN}${API_MIDDLEWARE}/specie`
 export const BREEDS = `${API_ORIGIN}${API_MIDDLEWARE}/breeds`
 
 // ------------ CARE SERVICES -------------
-export const CARE_SERVICE_BY_ID = `${API_ORIGIN}${API_MIDDLEWARE}/service`
-export const ALL_CARE_SERVICES = `${API_ORIGIN}${API_MIDDLEWARE}/services`
-export const ADD_CARE_SERVICE = `${API_ORIGIN}${API_MIDDLEWARE}/service`
-export const UPDATE_CARE_SERVICE = `${API_ORIGIN}${API_MIDDLEWARE}/service`
-export const DELETE_CARE_SERVICE = `${API_ORIGIN}${API_MIDDLEWARE}/service`
+export const ALL_CARE_SERVICES = `${API_ORIGIN}${API_MIDDLEWARE}/allBookings`
+export const YOUR_CARE_SERVICES = `${API_ORIGIN}${API_MIDDLEWARE}/yourBookings`
+export const ADD_CARE_SERVICE = `${API_ORIGIN}${API_MIDDLEWARE}/makeBooking`
+export const DELETE_CARE_SERVICE = `${API_ORIGIN}${API_MIDDLEWARE}/deleteBooking`
+export const UNAVAILABLE_DATES = `${API_ORIGIN}${API_MIDDLEWARE}/unavailableDates`

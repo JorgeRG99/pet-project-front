@@ -35,7 +35,7 @@ export default function HeroSection() {
             </Button>
           </Link>
           <Link to={isAuthenticated ? PAGES_URLS.hotel : PAGES_URLS.register}>
-            <Button className="text-white" size="lg">
+            <Button className="text-white bg-primary-medium" size="lg">
               {isAuthenticated ? "Hotel" : "Registrarse"}
             </Button>
           </Link>

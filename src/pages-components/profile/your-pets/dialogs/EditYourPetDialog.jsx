@@ -11,15 +11,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { PET_VALIDATION_MESSAGES } from "@/configs/validation-config";
+import { useExternalPets } from "@/hooks/useExternalPets";
 import { usePetValidation } from "@/hooks/usePetValidation";
-import { usePets } from "@/hooks/usePets";
 import { Validator } from "@/utils/utility-classes/user-data-validator";
 import { removeUndefinedKeys } from "@/utils/utility-functions/removeUndefinedKeys";
 import { useState } from "react";
 
-export default function EditPetInfoDialog({ pet, setPets }) {
+export default function EditYourPetDialog({ pet, setPets }) {
   const [open, setOpen] = useState(false);
-  const { petUpdate } = usePets();
+  const { petUpdate } = useExternalPets();
   const [validationMessages, setValidationMessages] = useState({});
   const { validatePetUpdate } = usePetValidation();
   const [hasAnyValueChanged, setHasAnyValueChanged] = useState(false);
@@ -105,7 +105,6 @@ export default function EditPetInfoDialog({ pet, setPets }) {
           </DialogTrigger>
           <Button
             onClick={handleSubmit}
-            disabled={!hasAnyValueChanged}
             className="text-white hover:opacity-75 transition duration-200 bg-primary-dark"
           >
             Actualizar

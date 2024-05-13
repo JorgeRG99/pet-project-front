@@ -10,11 +10,16 @@ import {
 import { useAuth } from "@/hooks/useAuth";
 import { Danger } from "@/icons/Danger";
 
-export default function LogoutDialog() {
+export default function LogoutDialog({ setOpen }) {
   const { logout } = useAuth();
 
+  const handleLogout = async () => {
+    await logout();
+    setOpen(false);
+  };
+
   return (
-    <Dialog>
+    <Dialog onClick={() => setOpen(false)}>
       <DialogTrigger asChild>
         <Button className="text-white bg-destructive hover:opacity-70 transition duration-300 active:scale-90">
           Salir
@@ -32,9 +37,14 @@ export default function LogoutDialog() {
         </div>
         <DialogFooter className="flex flex-row items-center sm:justify-evenly justify-evenly w-full">
           <DialogTrigger asChild>
-            <Button className="text-white bg-primary-dark hover:opacity-75 transition duration-200 active:scale-95">Continuar</Button>
+            <Button className="text-white bg-primary-dark hover:opacity-75 transition duration-200 active:scale-95">
+              Continuar
+            </Button>
           </DialogTrigger>
-          <Button onClick={logout} className="text-white bg-destructive hover:opacity-75 transition duration-200 active:scale-95">
+          <Button
+            onClick={handleLogout}
+            className="text-white bg-destructive hover:opacity-75 transition duration-200 active:scale-95"
+          >
             Cerrar sesión
           </Button>
         </DialogFooter>

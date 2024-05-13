@@ -32,7 +32,10 @@ export default function AllPetsPanel() {
       <AddPetDialog setPets={setPets} />
       <div className="w-full grid xs:grid-cols-pets grid-cols-petsmall gap-12">
         {pets?.map((pet) => (
-          <Card className="w-full flex flex-col justify-evenly" key={crypto.randomUUID()}>
+          <Card
+            className="w-full flex flex-col justify-evenly"
+            key={crypto.randomUUID()}
+          >
             <CardHeader>
               <CardTitle className="flex gap-4 items-center">
                 <p className="text-xl capitalize">{pet.name}</p>
@@ -50,7 +53,7 @@ export default function AllPetsPanel() {
                 <p>{pet.additional_info}</p>
                 <div className="flex justify-between text-sm">
                   <p>Edad: {pet.age} años</p>
-                  <p>Peso: {pet.weight}</p>
+                  <p>Peso: {pet.weight} kg</p>
                 </div>
                 <div className="flex justify-between text-sm">
                   <p>{timeWithUs(pet.date_entry)} con nosotros</p>

@@ -28,13 +28,7 @@ export const NAVBAR_SERVICES = [
         href: "/adiestramiento",
         description:
             "Entrenamiento personalizado: fortalece el vínculo y mejora la conducta de tu amigo peludo.",
-    },
-    {
-        title: "Educación animal",
-        href: "/educacion",
-        description:
-            "Aprende sobre tu mascota: consejos y técnicas para una convivencia feliz y saludable.",
-    },
+    }
 ];
 
 export const HOME_SERVICES_CARD_CONTENTS = {

@@ -120,7 +120,7 @@ export default function YourAdoptions() {
         <div className="flex flex-col justify-evenly items-center h-[15em]">
           <h3 className="text-xl">Aun no has realizado alguna adopción</h3>
           <Link to={PAGES_URLS.dogs}>
-            <Button className="text-white bg-primary hover:opacity-80 transition duration-200">
+            <Button className="text-white bg-primary-medium hover:opacity-80 transition duration-200">
               Conoce a tu proximo compañero
             </Button>
           </Link>

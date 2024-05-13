@@ -18,3 +18,5 @@ export const ADOPTION_CONFIRMED = 'La adopcion ha sido confirmed';
 export const SUCCESSFUL_PET_REGISTER = 'Mascota añadida exitosamente'
 export const SUCCESSFUL_PET_UPDATE = 'Mascota se ha actualizado exitosamente'
 export const SUCCESSFUL_PET_DELETE = 'Mascota se ha eliminado exitosamente'
+export const SUCCESSFUL_BOOKING = 'Cita agendada exitosamente'
+export const SUCCESSFUL_BOOKING_DELETE = 'Cita eliminada exitosamente'

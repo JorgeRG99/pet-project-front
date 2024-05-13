@@ -20,14 +20,14 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { PET_VALIDATION_MESSAGES } from "@/configs/validation-config";
 import { useBreeds } from "@/hooks/useBreeds";
+import { useExternalPets } from "@/hooks/useExternalPets";
 import { usePetValidation } from "@/hooks/usePetValidation";
-import { usePets } from "@/hooks/usePets";
 import { Validator } from "@/utils/utility-classes/user-data-validator";
 import { actualFormattedDate } from "@/utils/utility-functions/actualFormattedDate";
 import { convertKeysToSnakeCase } from "@/utils/utility-functions/fetchKeysFormat";
 import { useState } from "react";
 
-export default function AddPetDialog({ setPets }) {
+export default function AddYourPetDialog({ setPets }) {
   const [petData, setPetData] = useState({
     id: crypto.randomUUID(),
     name: "",
@@ -42,7 +42,7 @@ export default function AddPetDialog({ setPets }) {
   const [validationMessages, setValidationMessages] = useState({});
   const { validatePetRegister } = usePetValidation();
   const [open, setOpen] = useState(false);
-  const { petRegister } = usePets();
+  const { petRegister } = useExternalPets();
   const allFieldsHasValue = Object.values(petData).every(
     (value) => value !== ""
   );
@@ -54,8 +54,14 @@ export default function AddPetDialog({ setPets }) {
     }));
   };
 
-  const handleBreedChange = (value) =>
-    setPetData((prevState) => ({ ...prevState, breedId: value }));
+  const handleBreedChange = (value) => {
+    const values = value.split("/");
+    setPetData((prevState) => ({
+      ...prevState,
+      breedId: values[0],
+      breedName: values[1],
+    }));
+  };
   const handleGenderChange = (value) =>
     setPetData((prevState) => ({ ...prevState, gender: value }));
 
@@ -93,14 +99,14 @@ export default function AddPetDialog({ setPets }) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="text-white bg-primary-dark hover:opacity-75 transition duration-200 w-[10em] active:scale-95">
-          Añadir mascota
+        <Button className="text-white bg-primary-medium hover:opacity-80 transition duration-200">
+          Añade una mascota
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:w-[500px] w-[90%] bg-white rounded-lg flex flex-col">
         <DialogHeader>
           <DialogTitle className="flex justify-center items-center xs:text-2xl text-xl w-full">
-            Editar información de mascota
+            Añade una mascota
           </DialogTitle>
         </DialogHeader>
         <div className="py-8 text-[1em] space-y-6 max-w-full">
@@ -151,7 +157,10 @@ export default function AddPetDialog({ setPets }) {
                 <SelectContent>
                   <SelectGroup>
                     {breeds?.map((breed) => (
-                      <SelectItem key={crypto.randomUUID()} value={breed.id}>
+                      <SelectItem
+                        key={crypto.randomUUID()}
+                        value={`${breed.id}/${breed.name}`}
+                      >
                         {breed.name}
                       </SelectItem>
                     ))}
