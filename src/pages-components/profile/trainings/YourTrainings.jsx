@@ -7,26 +7,26 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useBookings } from "@/hooks/useBookings";
 import { Link } from "react-router-dom";
 import { PAGES_URLS } from "@/configs/app-routes-config";
 import { Button } from "@/components/ui/button";
 import Male from "@/icons/Male";
 import Female from "@/icons/Female";
 import { daysUntil } from "@/utils/utility-functions/daysUntil";
-import CancelBookingDialog from "./dialogs/CancelBookingDialog";
 import { dateToRealString } from "@/utils/utility-functions/dateToRealString";
+import { useTraining } from "@/hooks/useTraining";
+import CancelTrainingDialog from "./dialogs/CancelTrainingDialog";
 
-export default function YourBookings() {
-  const [bookings, setBookings] = useState([]);
-  const { yourBookings } = useBookings();
+export default function YourTrainings() {
+  const [trainings, setTrainings] = useState([]);
+  const { yourTrainings } = useTraining();
   const { yourPetsWithDeleted } = useExternalPets();
   const [pets, setPets] = useState([]);
 
   useEffect(() => {
-    const getYourBookings = async () => {
-      const res = await yourBookings();
-      setBookings(res);
+    const getYourTrainings = async () => {
+      const res = await yourTrainings();
+      setTrainings(res);
     };
 
     const getPets = async () => {
@@ -35,31 +35,30 @@ export default function YourBookings() {
     };
 
     getPets();
-    getYourBookings();
+    getYourTrainings();
   }, []);
 
   return (
     <section>
-      {bookings.length === 0 ? (
+      {trainings.length === 0 ? (
         <div className="flex flex-col gap-8 items-center h-[15em] mt-6">
           <h3 className="text-md">
-            Aun no has reservado en nuestro servicio de cuidados
+            Aun no has solicitado servicio de adiestramiento
           </h3>
-          <Link to={PAGES_URLS.hotel}>
+          <Link to={PAGES_URLS.training}>
             <Button className="text-white bg-primary-medium hover:opacity-80 transition duration-200">
-              Conoce a tu proximo compañero
+              Educa tu mascota
             </Button>
           </Link>
         </div>
       ) : (
         <section className="pt-6 flex flex-col gap-6 items-center">
           <div className="flex flex-row flex-wrap justify-center gap-12 px-8">
-            {bookings?.map((booking) => {
+            {trainings?.map((training) => {
               const pet = pets.find(
-                (pet) => pet.id === booking.external_pet_id
+                (pet) => pet.id === training.external_pet_id
               );
-              const daysUntilStart = daysUntil(booking?.arrive);
-              const daysUntilEnd = daysUntil(booking?.departure);
+              const daysUntilStart = daysUntil(training?.date);
 
               return (
                 <Card
@@ -81,19 +80,17 @@ export default function YourBookings() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="space-y-2 text-md">
-                      <p>
-                        <span className="font-medium">Llegada:</span>{" "}
-                        {dateToRealString(booking?.arrive)}
+                    <div className="space-y-2 text-xl">
+                      <p className="font-medium font-alegreya">
+                        {dateToRealString(training?.date)}
                       </p>
-                      <p>
-                        <span className="font-medium">Salida:</span>{" "}
-                        {dateToRealString(booking?.departure)}
+                      <p className="font-medium font-alegreya">
+                        A las {training?.hour.slice(0, 5)}
                       </p>
                     </div>
                   </CardContent>
                   <CardFooter className="flex flex-col gap-3">
-                    {booking.cancelled === 1 ? (
+                    {training.cancelled === 1 ? (
                       <p className="text-destructive font-medium font-alegreya text-xl">
                         Reserva cancelada
                       </p>
@@ -101,29 +98,22 @@ export default function YourBookings() {
                       <>
                         <div className="text-lg font-alegreya font-medium text-primary-dark">
                           {daysUntilStart === 0 ? (
-                            <p>La estancia de su mascota comienza hoy!</p>
-                          ) : daysUntilStart < 0 && daysUntilEnd === 0 ? (
-                            <p>La estancia de su mascota termina hoy!</p>
-                          ) : daysUntilStart < 0 && daysUntilEnd < 0 ? (
-                            <p>La estancia de su mascota ha terminado!</p>
+                            <p>La sesion de entrenamiento es hoy!</p>
+                          ) : daysUntilStart < 0 ? (
+                            <p>La sesion de entrenamiento se ha completado</p>
                           ) : daysUntilStart > 0 ? (
                             <p>
                               Quedan {daysUntilStart} dia
                               {daysUntilStart > 1 ? "s" : ""} para el comienzo!
                             </p>
-                          ) : daysUntilStart < 0 && daysUntilEnd > 0 ? (
-                            <p>
-                              Quedan {daysUntilEnd} dia
-                              {daysUntilEnd > 1 ? "s" : ""} para el final!
-                            </p>
                           ) : null}
                         </div>
 
                         {daysUntilStart > 0 && (
-                          <CancelBookingDialog
-                            booking={booking}
+                          <CancelTrainingDialog
+                            training={training}
                             pet={pet}
-                            setBookings={setBookings}
+                            setTrainings={setTrainings}
                           />
                         )}
                       </>

@@ -13,6 +13,7 @@ export const SESSION_RECOVER = `${API_ORIGIN}${API_MIDDLEWARE}/recoverSession`
 export const USER_REGISTER = `${API_ORIGIN}${API_MIDDLEWARE}/register`
 export const USER_LOGIN = `${API_ORIGIN}${API_MIDDLEWARE}/login`
 export const USER_LOGOUT = `${API_ORIGIN}${API_MIDDLEWARE}/logout`
+export const GET_USER = `${API_ORIGIN}${API_MIDDLEWARE}/getUser`
 export const USER = `${API_ORIGIN}${API_MIDDLEWARE}/user`
 export const CHANGE_PASSWORD = `${API_ORIGIN}${API_MIDDLEWARE}/changePassword`
 export const CHANGE_EMAIL = `${API_ORIGIN}${API_MIDDLEWARE}/changeEmail`
@@ -29,6 +30,7 @@ export const CANCEL_ADOPTION = `${API_ORIGIN}${API_MIDDLEWARE}/cancelAdoption`
 
 // ------------ PETS -------------
 export const ALL_PETS = `${API_ORIGIN}${API_MIDDLEWARE}/pets`
+export const ALL_PETS_WITH_DELETED = `${API_ORIGIN}${API_MIDDLEWARE}/petsWithDeleted`
 export const PET_BY_ID = `${API_ORIGIN}${API_MIDDLEWARE}/pet`
 export const ADD_PET = `${API_ORIGIN}${API_MIDDLEWARE}/pet`
 export const UPDATE_PET = `${API_ORIGIN}${API_MIDDLEWARE}/pet`
@@ -60,3 +62,13 @@ export const YOUR_CARE_SERVICES = `${API_ORIGIN}${API_MIDDLEWARE}/yourBookings`
 export const ADD_CARE_SERVICE = `${API_ORIGIN}${API_MIDDLEWARE}/makeBooking`
 export const DELETE_CARE_SERVICE = `${API_ORIGIN}${API_MIDDLEWARE}/deleteBooking`
 export const UNAVAILABLE_DATES = `${API_ORIGIN}${API_MIDDLEWARE}/unavailableDates`
+export const BOOKINGS_PANEL = `${API_ORIGIN}${API_MIDDLEWARE}/bookingsPanel`
+
+
+// ------------ TRAINING SERVICES -------------
+export const FULL_DATES = `${API_ORIGIN}${API_MIDDLEWARE}/fullDates`
+export const AVAILABLE_HOURS = `${API_ORIGIN}${API_MIDDLEWARE}/availableHours`
+export const SCHEDULE_TRAINING = `${API_ORIGIN}${API_MIDDLEWARE}/scheduleTraining`
+export const DELETE_TRAINING = `${API_ORIGIN}${API_MIDDLEWARE}/deleteTraining`
+export const YOUR_TRAINING = `${API_ORIGIN}${API_MIDDLEWARE}/yourTrainingBookings`
+export const TRAINING_PANEL = `${API_ORIGIN}${API_MIDDLEWARE}/trainingPanel`

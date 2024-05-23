@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -18,11 +17,12 @@ import { PAGES_URLS } from "@/configs/app-routes-config";
 import AdoptionCompleted from "@/pages-components/global/AdoptionCompleted";
 import AdoptionCancelled from "@/pages-components/global/AdoptionCancelled";
 import Cross from "@/icons/Cross";
+import Dog from "@/icons/Dog";
+import Cat from "@/icons/Cat";
 
 export default function YourAdoptions() {
   const [adoptions, setAdoptions] = useState(null);
   const { yourAdoptionsFetch } = useAdoption();
-
   useEffect(() => {
     const getAdoptions = async () => {
       const fetchedAdoptions = await yourAdoptionsFetch();
@@ -94,10 +94,9 @@ export default function YourAdoptions() {
 
                   <div className="flex flex-col justify-between md:gap-0 gap-10">
                     <div className="flex flex-col gap-4">
-                      <h3>
-                        <span className="font-semibold">Especie:</span>{" "}
-                        {pet.specie}
-                      </h3>
+                      <div className="w-full flex items-end justify-end">
+                        <span>{pet.specie === "dog" ? <Dog /> : <Cat />}</span>
+                      </div>
                       <h3>
                         <span className="font-semibold">Raza:</span> {pet.breed}
                       </h3>

@@ -4,6 +4,7 @@ import { UserSessionContext } from "@/context/userSession";
 import ProfileInfo from "@/pages-components/profile/ProfileInfo";
 import YourAdoptions from "@/pages-components/profile/adoptions/YourAdoptions";
 import YourBookings from "@/pages-components/profile/bookings/YourBookings";
+import YourTrainings from "@/pages-components/profile/trainings/YourTrainings";
 import YourPets from "@/pages-components/profile/your-pets/YourPets";
 import { takeInitials } from "@/utils/utility-functions/takeInitials";
 import { useContext } from "react";
@@ -28,7 +29,7 @@ export default function Profile() {
         defaultValue="profile"
         className="w-full flex flex-col items-center"
       >
-        <TabsList className="p-2 h-auto w-[380px] md:w-[520px] xs:w-[420px] bg-white shadow">
+        <TabsList className="p-2 h-auto w-[380px] md:w-[580px] xs:w-[480px] bg-white shadow">
           <TabsTrigger
             className="md:text-xl xs:text-sm text-[.7em] font-normal data-[state=active]:text-white data-[state=active]:bg-primary-dark"
             value="profile"
@@ -49,9 +50,9 @@ export default function Profile() {
           </TabsTrigger>
           <TabsTrigger
             className="md:text-xl xs:text-sm text-[.7em] font-normal data-[state=active]:text-white data-[state=active]:bg-primary-dark"
-            value="history"
+            value="trainings"
           >
-            Historial
+            Entrenamientos
           </TabsTrigger>
           <TabsTrigger
             className="md:text-xl xs:text-sm text-[.7em] font-normal data-[state=active]:text-white data-[state=active]:bg-primary-dark"
@@ -68,6 +69,9 @@ export default function Profile() {
         </TabsContent>
         <TabsContent className="w-full" value="bookings">
           <YourBookings />
+        </TabsContent>
+        <TabsContent className="w-full" value="trainings">
+          <YourTrainings />
         </TabsContent>
         <TabsContent className="w-full" value="adoptions">
           <YourAdoptions />

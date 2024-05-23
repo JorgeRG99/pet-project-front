@@ -1,4 +1,4 @@
-import { ADD_YOUR_PET, DELETE_YOUR_PET, UPDATE_YOUR_PET, YOUR_CATS, YOUR_DOGS, YOUR_PETS, YOUR_PETS_WITH_DELETED } from "@/configs/api-routes-config";
+import { ADD_YOUR_PET, ALL_PETS_WITH_DELETED, DELETE_YOUR_PET, UPDATE_YOUR_PET, YOUR_CATS, YOUR_DOGS, YOUR_PETS, YOUR_PETS_WITH_DELETED } from "@/configs/api-routes-config";
 
 
 export const getYourPets = async (token) => {
@@ -44,6 +44,23 @@ export const getYourPetsWithDeleted = async (token) => {
 export const getYourCats = async (token) => {
     try {
         const res = await fetch(YOUR_CATS, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (!res.ok) return 500;
+
+        const response = await res.json()
+        return response.response;
+    } catch (error) {
+        return { status: 500 }
+    }
+}
+
+export const getAllPetsWithDeleted = async (token) => {
+    try {
+        const res = await fetch(ALL_PETS_WITH_DELETED, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

@@ -27,7 +27,7 @@ import { useExternalPets } from "@/hooks/useExternalPets";
 import { useHotelUnavailableDates } from "@/hooks/useHotelUnavailableDates";
 import { cn } from "@/lib/utils";
 import AddYourPetDialog from "@/pages-components/profile/your-pets/dialogs/AddYourPetDialog";
-import { calculateCareservicePrice } from "@/utils/utility-functions/calculateCareServicePrice";
+import { calculateCareServicePrice } from "@/utils/utility-functions/calculateCareServicePrice";
 import { datesArrayToUnixDateArray } from "@/utils/utility-functions/datesArrayToUnixDateArray";
 import { emptyObject } from "@/utils/utility-functions/emtpyObject";
 import { convertKeysToSnakeCase } from "@/utils/utility-functions/fetchKeysFormat";
@@ -47,14 +47,14 @@ export default function BookingDialog({ type }) {
   });
   const [pets, setPets] = useState([]);
   const { yourPetsToBooking } = useExternalPets(type);
-  const unavailableSubmit = pets.length === 0 || emptyObject(booking);
-  const { addBooking } = useBookings(booking);
+  const unavailableSubmit = pets.length === 0 || emptyObject(booking) || !date.from || !date.to;
+  const { addBooking } = useBookings();
 
   useEffect(() => {
     if (!unavailableSubmit) {
       const days = (date.to - date.from) / 86400000 + 1;
       setTotalPrice(
-        calculateCareservicePrice(
+        calculateCareServicePrice(
           days,
           pets.find((pet) => pet.id === booking?.externalPetId)
         )
@@ -181,7 +181,7 @@ export default function BookingDialog({ type }) {
               <Select name="breed" onValueChange={handlePetSelection}>
                 <Label htmlFor="breed">Selecciona una mascota</Label>
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Selecciona una raza" />
+                  <SelectValue placeholder="Selecciona una mascota" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>

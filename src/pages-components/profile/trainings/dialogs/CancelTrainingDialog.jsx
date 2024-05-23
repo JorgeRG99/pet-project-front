@@ -7,18 +7,18 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { useBookings } from "@/hooks/useBookings";
+import { useTraining } from "@/hooks/useTraining";
 import { DialogDescription } from "@radix-ui/react-dialog";
 import { useState } from "react";
 
-export default function CancelBookingDialog({ booking, setBookings, pet }) {
-  const { bookingDelete } = useBookings(setBookings);
+export default function CancelTrainingDialog({ training, setTrainings, pet }) {
+  const { trainingDelete } = useTraining();
   const [open, setOpen] = useState(false);
 
   const handleClose = () => setOpen(false);
 
   const handleDelete = async () => {
-    await bookingDelete(booking.id, setBookings);
+    await trainingDelete(training.id, setTrainings);
     setOpen(false);
   };
   return (

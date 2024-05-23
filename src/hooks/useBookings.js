@@ -1,6 +1,6 @@
 import { SERVER_ERROR, SUCCESSFUL_BOOKING, SUCCESSFUL_BOOKING_DELETE } from "@/configs/user-feedback-config";
 import { UserSessionContext } from "@/context/userSession";
-import { createBooking, deleteBooking, getYourBookings } from "@/services/BookingService";
+import { createBooking, deleteBooking, getBookingsPanel, getYourBookings } from "@/services/BookingService";
 import { useContext } from "react";
 import { toast } from "sonner";
 
@@ -39,5 +39,16 @@ export function useBookings() {
         }
     }
 
-    return { addBooking, yourBookings, bookingDelete }
+    const bookingsPanel = async () => {
+        const res = await getBookingsPanel(userSession.token)
+
+        if (res.status === 200) {
+            return res.response
+        } else {
+            toast.error(SERVER_ERROR);
+            return []
+        }
+    }
+
+    return { addBooking, yourBookings, bookingDelete, bookingsPanel }
 }

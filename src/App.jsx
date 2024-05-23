@@ -12,6 +12,7 @@ import { Toaster } from "sonner";
 import DogsCatalogue from "./pages/DogsCatalogue";
 import CatsCatalogue from "./pages/CatsCatalogue";
 import Panel from "./pages/Panel";
+import TrainingPage from "./pages/TrainingPage";
 
 function App() {
   const { userSession } = useRecoverSession();
@@ -35,6 +36,7 @@ function App() {
         <Route path={PAGES_URLS.dogs} element={<DogsCatalogue />} />
         <Route path={PAGES_URLS.cats} element={<CatsCatalogue />} />
         <Route path={PAGES_URLS.hotel} element={<HotelPage />} />
+        <Route path={PAGES_URLS.training} element={<TrainingPage />} />
         <Route
           path={PAGES_URLS.login}
           element={

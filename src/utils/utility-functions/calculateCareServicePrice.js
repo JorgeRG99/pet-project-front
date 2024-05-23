@@ -1,4 +1,4 @@
-export const calculateCareservicePrice = (days, pet) => {
+export const calculateCareServicePrice = (days, pet) => {
     const discount = days > 30 ? 0.75 :
         days < 30 && days >= 7 ? 0.85
             : 1

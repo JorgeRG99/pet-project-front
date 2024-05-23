@@ -7,6 +7,8 @@ import Pending from "@/icons/Pending";
 import { useEffect, useState } from "react";
 import ManageAdoptionDialog from "./dialogs/ManageAdoptionDialog";
 import Cross from "@/icons/Cross";
+import Dog from "@/icons/Dog";
+import Cat from "@/icons/Cat";
 
 export default function AdoptionsPanel() {
   const [adoptions, setAdoptions] = useState(null);
@@ -46,56 +48,60 @@ export default function AdoptionsPanel() {
                         <Female size={30} />
                       )}
                     </span>
+                    <span>{pet.specie === "dog" ? <Dog /> : <Cat />}</span>
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="flex gap-20">
-                <div className="space-y-4">
-                    <h3 className="text-xl font-semibold">Proceso</h3>
+                <CardContent className="flex flex-col gap-4">
+                  <p className="font-medium text-primary-dark">
+                    Dueño: {adoption.user?.name} {adoption.user?.last_name}
+                  </p>
 
+                  <div className="flex gap-20">
                     <div className="space-y-4">
-                      <div className="flex gap-3 items-center">
-                        {status !== "cancelled" ? <Check /> : <Cross />}
-                        <p className="font-medium">Solicitada</p>
-                      </div>
-                      <div className="flex gap-3 items-center">
-                        {(status === "accepted" || status === "confirmed") &&
-                        status !== "cancelled" ? (
-                          <Check />
-                        ) : status === "pending" ? (
-                          <Pending />
-                        ) : (
-                          <Cross />
-                        )}
-                        <p className="font-medium">Aceptada</p>
-                      </div>
-                      <div className="flex gap-3 items-center">
-                        {status === "confirmed" ? (
-                          <Check />
-                        ) : status !== "cancelled" ? (
-                          <Pending />
-                        ) : (
-                          <Cross />
-                        )}{" "}
-                        <p className="font-medium">Confirmada</p>
-                      </div>
-                    </div>
-                  </div>
+                      <h3 className="text-xl font-semibold">Proceso</h3>
 
-                  <div className="flex flex-col justify-between">
-                    <div className="flex flex-col gap-4">
-                      <h3>
-                        <span className="font-semibold">Especie:</span>{" "}
-                        {pet.specie}
-                      </h3>
-                      <h3>
-                        <span className="font-semibold">Raza:</span> {pet.breed}
-                      </h3>
+                      <div className="space-y-4">
+                        <div className="flex gap-3 items-center">
+                          {status !== "cancelled" ? <Check /> : <Cross />}
+                          <p className="font-medium">Solicitada</p>
+                        </div>
+                        <div className="flex gap-3 items-center">
+                          {(status === "accepted" || status === "confirmed") &&
+                          status !== "cancelled" ? (
+                            <Check />
+                          ) : status === "pending" ? (
+                            <Pending />
+                          ) : (
+                            <Cross />
+                          )}
+                          <p className="font-medium">Aceptada</p>
+                        </div>
+                        <div className="flex gap-3 items-center">
+                          {status === "confirmed" ? (
+                            <Check />
+                          ) : status !== "cancelled" ? (
+                            <Pending />
+                          ) : (
+                            <Cross />
+                          )}{" "}
+                          <p className="font-medium">Confirmada</p>
+                        </div>
+                      </div>
                     </div>
-                    <ManageAdoptionDialog
-                      adoptionId={adoption.id}
-                      setAdoptions={setAdoptions}
-                      status={status}
-                    />
+
+                    <div className="flex flex-col justify-between">
+                      <div className="flex flex-col gap-4">
+                        <h3>
+                          <span className="font-semibold">Raza:</span>{" "}
+                          {pet.breed}
+                        </h3>
+                      </div>
+                      <ManageAdoptionDialog
+                        adoptionId={adoption.id}
+                        setAdoptions={setAdoptions}
+                        status={status}
+                      />
+                    </div>
                   </div>
                 </CardContent>
               </Card>

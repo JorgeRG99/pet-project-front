@@ -1,29 +1,48 @@
-import { ADD_CARE_SERVICE, BOOKINGS_PANEL, DELETE_CARE_SERVICE, UNAVAILABLE_DATES, YOUR_CARE_SERVICES } from "@/configs/api-routes-config";
+import { AVAILABLE_HOURS, DELETE_TRAINING, FULL_DATES, SCHEDULE_TRAINING, TRAINING_PANEL, YOUR_TRAINING } from "@/configs/api-routes-config";
 
-export const getYourBookings = async (token) => {
+export const fullDates = async (token) => {
     try {
-        const res = await fetch(YOUR_CARE_SERVICES, {
+        const res = await fetch(FULL_DATES, {
             headers: {
                 'Authorization': `Bearer ${token}`
-            },
+            }
         });
 
         const successfulResponse = await res.json()
         const response = {
             status: res.status,
-            response: successfulResponse.response.result
+            response: successfulResponse.response
         }
 
         return response;
-
     } catch (error) {
         return { status: 500 }
     }
 }
 
-export const createBooking = async (bookingData, token) => {
+export const availableHours = async (token, date) => {
     try {
-        const res = await fetch(ADD_CARE_SERVICE, {
+        const res = await fetch(`${AVAILABLE_HOURS}?date=${date}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        const successfulResponse = await res.json()
+        const response = {
+            status: res.status,
+            response: successfulResponse.response
+        }
+
+        return response;
+    } catch (error) {
+        return { status: 500 }
+    }
+}
+
+export const createTrainingBooking = async (bookingData, token) => {
+    try {
+        const res = await fetch(SCHEDULE_TRAINING, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -45,29 +64,51 @@ export const createBooking = async (bookingData, token) => {
     }
 }
 
-export const unavailableDates = async (token) => {
+export const getYourTrainings = async (token) => {
     try {
-        const res = await fetch(UNAVAILABLE_DATES, {
+        const res = await fetch(YOUR_TRAINING, {
             headers: {
                 'Authorization': `Bearer ${token}`
-            }
+            },
         });
 
         const successfulResponse = await res.json()
         const response = {
             status: res.status,
-            response: successfulResponse.response
+            response: successfulResponse.response.result
         }
 
         return response;
+
     } catch (error) {
         return { status: 500 }
     }
 }
 
-export const deleteBooking = async (token, id) => {
+export const getTrainingPanel = async (token) => {
     try {
-        const res = await fetch(DELETE_CARE_SERVICE, {
+        const res = await fetch(TRAINING_PANEL, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            },
+        });
+
+        const successfulResponse = await res.json()
+        const response = {
+            status: res.status,
+            response: successfulResponse.response.result
+        }
+
+        return response;
+
+    } catch (error) {
+        return { status: 500 }
+    }
+}
+
+export const deleteTraining = async (token, id) => {
+    try {
+        const res = await fetch(DELETE_TRAINING, {
             method: 'PATCH',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -82,27 +123,6 @@ export const deleteBooking = async (token, id) => {
         }
 
         return response;
-    } catch (error) {
-        return { status: 500 }
-    }
-}
-
-export const getBookingsPanel = async (token) => {
-    try {
-        const res = await fetch(BOOKINGS_PANEL, {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            },
-        });
-
-        const successfulResponse = await res.json()
-        const response = {
-            status: res.status,
-            response: successfulResponse.response.result
-        }
-
-        return response;
-
     } catch (error) {
         return { status: 500 }
     }

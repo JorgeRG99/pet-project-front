@@ -1,6 +1,6 @@
 import { SERVER_ERROR, SERVER_VALIDATION_ERROR, SUCCESSFUL_PET_REGISTER, SUCCESSFUL_PET_UPDATE } from "@/configs/user-feedback-config";
 import { UserSessionContext } from "@/context/userSession";
-import { deletePet, getYourCats, getYourDogs, getYourPets, getYourPetsWithDeleted, registerPet, updatePet } from "@/services/ExternalPetsService";
+import { deletePet, getAllPetsWithDeleted, getYourCats, getYourDogs, getYourPets, getYourPetsWithDeleted, registerPet, updatePet } from "@/services/ExternalPetsService";
 import { convertKeysToSnakeCase } from "@/utils/utility-functions/fetchKeysFormat";
 import { useContext } from "react";
 import { toast } from "sonner";
@@ -17,6 +17,11 @@ export function useExternalPets(type = undefined) {
             toast.error(SERVER_ERROR);
             return []
         }
+    }
+
+    const allPetsWithDeleted = async () => {
+        const res = await getAllPetsWithDeleted(userSession.token);
+        return res.result
     }
 
     const yourPetsWithDeleted = async () => {
@@ -80,5 +85,5 @@ export function useExternalPets(type = undefined) {
         }
     }
 
-    return { petUpdate, petDelete, petRegister, yourPets, yourPetsToBooking, yourPetsWithDeleted }
+    return { petUpdate, petDelete, petRegister, yourPets, yourPetsToBooking, yourPetsWithDeleted, allPetsWithDeleted }
 }
