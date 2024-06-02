@@ -59,8 +59,8 @@ export default function ManageAdoptionDialog({
       toast.info(ADOPTION_CANCELLED);
 
       setAdoptions((prevStatus) => {
-        let adoption = prevStatus.find((adoption) => adoption.id === adoptionId);
-        const filteredAdoptions = prevStatus.filter((adoption) => adoption.id !== adoptionId);
+        let adoption = prevStatus.find((adoption) => adoption?.id === adoptionId);
+        const filteredAdoptions = prevStatus.filter((adoption) => adoption?.id !== adoptionId);
 
         adoption.status = "cancelled";
 

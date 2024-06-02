@@ -90,7 +90,7 @@ export default function YourTrainings() {
                     </div>
                   </CardContent>
                   <CardFooter className="flex flex-col gap-3">
-                    {training.cancelled === 1 ? (
+                    {training?.cancelled === 1 ? (
                       <p className="text-destructive font-medium font-alegreya text-xl">
                         Reserva cancelada
                       </p>

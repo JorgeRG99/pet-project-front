@@ -45,7 +45,7 @@ export default function TrainingsPanel() {
       {scheduledTrainings?.length > 0 ? (
         <div className="w-full flex flex-wrap gap-12">
           {scheduledTrainings?.map((training) => {
-            const pet = pets.find((pet) => pet.id === training.external_pet_id);
+            const pet = pets.find((pet) => pet.id === training?.external_pet_id);
             const daysUntilStart = daysUntil(training?.date);
 
             return (
@@ -73,7 +73,7 @@ export default function TrainingsPanel() {
                 <CardContent className="flex flex-col gap-3">
                   <div className="space-y-2 text-md">
                     <p className="font-medium text-primary-dark">
-                      Dueño: {training.user?.name} {training.user?.last_name}
+                      Dueño: {training?.user?.name} {training?.user?.last_name}
                     </p>
                   </div>
                   <div className="space-y-2 text-xl">
@@ -86,7 +86,7 @@ export default function TrainingsPanel() {
                   </div>
                 </CardContent>
                 <CardFooter className="flex flex-col gap-3">
-                  {training.cancelled === 1 ? (
+                  {training?.cancelled === 1 ? (
                     <p className="text-destructive font-medium font-alegreya text-xl">
                       Reserva cancelada
                     </p>

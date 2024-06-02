@@ -41,9 +41,9 @@ export default function AllPetsPanel() {
             <CardHeader>
               <CardTitle className="flex justify-between items-center">
                 <div className="flex gap-4 items-center">
-                  <p className="text-xl capitalize">{pet.name}</p>
+                  <p className="text-xl capitalize">{pet?.name}</p>
                   <span>
-                    {pet.gender === "male" ? (
+                    {pet?.gender === "male" ? (
                       <Male size={20} />
                     ) : (
                       <Female size={20} />
@@ -51,18 +51,18 @@ export default function AllPetsPanel() {
                   </span>
                 </div>
 
-                <span>{pet.specie === "dog" ? <Dog /> : <Cat />}</span>
+                <span>{pet?.specie === "dog" ? <Dog /> : <Cat />}</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-6 text-sm">
-                <p>{pet.additional_info}</p>
+                <p>{pet?.additional_info}</p>
                 <div className="flex justify-between text-sm">
-                  <p>Edad: {pet.age} años</p>
-                  <p>Peso: {pet.weight} kg</p>
+                  <p>Edad: {pet?.age} años</p>
+                  <p>Peso: {pet?.weight} kg</p>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <p>{timeWithUs(pet.date_entry)} con nosotros</p>
+                  <p>{timeWithUs(pet?.date_entry)} con nosotros</p>
                   <p className="font-medium text-[1.1em]">{pet.breed}</p>
                 </div>
               </div>

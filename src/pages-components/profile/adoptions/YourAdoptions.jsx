@@ -42,16 +42,16 @@ export default function YourAdoptions() {
             return (
               <Card
                 className="w-full xs:w-[400px] flex flex-col justify-evenly"
-                key={adoption.id}
+                key={adoption?.id}
               >
                 <CardHeader>
                   <CardTitle className="flex gap-8 items-center">
                     <p className="text-2xl">
                       Proceso de adopcion de{" "}
-                      <span className="capitalize">{pet.name}</span>
+                      <span className="capitalize">{pet?.name}</span>
                     </p>
                     <span>
-                      {pet.gender === "male" ? (
+                      {pet?.gender === "male" ? (
                         <Male size={30} />
                       ) : (
                         <Female size={30} />
@@ -95,10 +95,10 @@ export default function YourAdoptions() {
                   <div className="flex flex-col justify-between md:gap-0 gap-10">
                     <div className="flex flex-col gap-4">
                       <div className="w-full flex items-end justify-end">
-                        <span>{pet.specie === "dog" ? <Dog /> : <Cat />}</span>
+                        <span>{pet?.specie === "dog" ? <Dog /> : <Cat />}</span>
                       </div>
                       <h3>
-                        <span className="font-semibold">Raza:</span> {pet.breed}
+                        <span className="font-semibold">Raza:</span> {pet?.breed}
                       </h3>
                     </div>
                     {status === "cancelled" && <AdoptionCancelled />}

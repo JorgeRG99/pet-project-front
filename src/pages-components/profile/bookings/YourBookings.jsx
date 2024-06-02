@@ -56,7 +56,7 @@ export default function YourBookings() {
           <div className="flex flex-row flex-wrap justify-center gap-12 px-8">
             {bookings?.map((booking) => {
               const pet = pets.find(
-                (pet) => pet.id === booking.external_pet_id
+                (pet) => pet.id === booking?.external_pet_id
               );
               const daysUntilStart = daysUntil(booking?.arrive);
               const daysUntilEnd = daysUntil(booking?.departure);
@@ -93,7 +93,7 @@ export default function YourBookings() {
                     </div>
                   </CardContent>
                   <CardFooter className="flex flex-col gap-3">
-                    {booking.cancelled === 1 ? (
+                    {booking?.cancelled === 1 ? (
                       <p className="text-destructive font-medium font-alegreya text-xl">
                         Reserva cancelada
                       </p>

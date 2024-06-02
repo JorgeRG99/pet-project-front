@@ -24,8 +24,8 @@ export default function EditPetInfoDialog({ pet, setPets }) {
   const { validatePetUpdate } = usePetValidation();
   const [hasAnyValueChanged, setHasAnyValueChanged] = useState(false);
   const [updatedData, setUpdatedData] = useState({
-    weight: pet.weight.replace(" kg", ""),
-    additionalInfo: pet.additional_info,
+    weight: pet?.weight.replace(" kg", ""),
+    additionalInfo: pet?.additional_info,
   });
 
   const handleChange = (e) => {
@@ -53,7 +53,7 @@ export default function EditPetInfoDialog({ pet, setPets }) {
       } else {
         const cleanUpdatedData = removeUndefinedKeys(updatedData);
 
-        await petUpdate(cleanUpdatedData, setPets, pet.id);
+        await petUpdate(cleanUpdatedData, setPets, pet?.id);
         setOpen(false);
         setValidationMessages({});
       }

@@ -46,7 +46,7 @@ export default function BookingsPanel() {
       {scheduledBookings?.length > 0 ? (
         <div className="w-full flex flex-wrap gap-12">
           {scheduledBookings?.map((booking) => {
-            const pet = pets.find((pet) => pet.id === booking.external_pet_id);
+            const pet = pets.find((pet) => pet?.id === booking?.external_pet_id);
             const daysUntilStart = daysUntil(booking?.arrive);
             const daysUntilEnd = daysUntil(booking?.departure);
 
@@ -62,19 +62,19 @@ export default function BookingsPanel() {
                     </p>
                     <div className="flex gap-3">
                       <span>
-                        {pet.gender === "male" ? (
+                        {pet?.gender === "male" ? (
                           <Male size={25} />
                         ) : (
                           <Female size={25} />
                         )}
                       </span>
-                      <span>{pet.specie === "dog" ? <Dog /> : <Cat />}</span>
+                      <span>{pet?.specie === "dog" ? <Dog /> : <Cat />}</span>
                     </div>
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-3">
                   <p className="font-medium text-primary-dark">
-                    Dueño: {booking.user?.name} {booking.user?.last_name}
+                    Dueño: {booking?.user?.name} {booking?.user?.last_name}
                   </p>
                   <div className="space-y-2 text-md">
                     <p>
@@ -88,7 +88,7 @@ export default function BookingsPanel() {
                   </div>
                 </CardContent>
                 <CardFooter className="flex flex-col gap-3">
-                  {booking.cancelled === 1 ? (
+                  {booking?.cancelled === 1 ? (
                     <p className="text-destructive font-medium font-alegreya text-xl">
                       Reserva cancelada
                     </p>

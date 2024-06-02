@@ -53,7 +53,7 @@ export default function AdoptionsPanel() {
                 </CardHeader>
                 <CardContent className="flex flex-col gap-4">
                   <p className="font-medium text-primary-dark">
-                    Dueño: {adoption.user?.name} {adoption.user?.last_name}
+                    Dueño: {adoption?.user?.name} {adoption?.user?.last_name}
                   </p>
 
                   <div className="flex gap-20">
@@ -97,7 +97,7 @@ export default function AdoptionsPanel() {
                         </h3>
                       </div>
                       <ManageAdoptionDialog
-                        adoptionId={adoption.id}
+                        adoptionId={adoption?.id}
                         setAdoptions={setAdoptions}
                         status={status}
                       />
