@@ -19,13 +19,13 @@ export const NAVBAR_PETS = [
 export const NAVBAR_SERVICES = [
     {
         title: "Hotel",
-        href: "/hotel",
+        href: PAGES_URLS.hotel,
         description:
             "Atención experta para su bienestar, cuidamos de tu mascota como si fuera nuestra.",
     },
     {
         title: "Adiestramiento",
-        href: "/adiestramiento",
+        href: PAGES_URLS.training,
         description:
             "Entrenamiento personalizado: fortalece el vínculo y mejora la conducta de tu amigo peludo.",
     }

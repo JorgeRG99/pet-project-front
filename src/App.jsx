@@ -13,10 +13,15 @@ import DogsCatalogue from "./pages/DogsCatalogue";
 import CatsCatalogue from "./pages/CatsCatalogue";
 import Panel from "./pages/Panel";
 import TrainingPage from "./pages/TrainingPage";
+import { USER_TYPES } from "./configs/user-types-config";
+import RegisterWorker from "./pages/RegisterWorker";
 
 function App() {
   const { userSession } = useRecoverSession();
-  const isAuthenticated = userSession.token;
+  const { role, token } = userSession;
+  
+  const isAuthenticated = token;
+  const isAdmin = role === USER_TYPES.worker 
 
   return (
     <>
@@ -53,6 +58,12 @@ function App() {
           path={PAGES_URLS.profile}
           element={
             !isAuthenticated ? <Navigate to={PAGES_URLS.home} /> : <Profile />
+          }
+        />
+        <Route
+          path={PAGES_URLS.registerWorker}
+          element={
+            !isAuthenticated || !isAdmin ? <Navigate to={PAGES_URLS.home} /> : <RegisterWorker />
           }
         />
       </Routes>

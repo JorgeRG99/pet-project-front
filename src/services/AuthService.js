@@ -1,4 +1,4 @@
-import { SESSION_RECOVER, USER, USER_LOGIN, USER_LOGOUT, USER_REGISTER } from "@/configs/api-routes-config";
+import { SESSION_RECOVER, USER, USER_LOGIN, USER_LOGOUT, USER_REGISTER, WORKER_REGISTER } from "@/configs/api-routes-config";
 
 export const user = async (authToken) => {
     try {
@@ -25,6 +25,29 @@ export const user = async (authToken) => {
 export const userRegister = async (userData) => {
     try {
         const res = await fetch(USER_REGISTER, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userData),
+        });
+
+        const successfulResponse = await res.json()
+        const response = {
+            status: res.status,
+            response: successfulResponse.response
+        }
+        
+        return response;
+
+    } catch (error) {
+        return { status: 500 }
+    }
+}
+
+export const workerRegister = async (userData) => {
+    try {
+        const res = await fetch(WORKER_REGISTER, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

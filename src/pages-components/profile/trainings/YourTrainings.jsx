@@ -71,7 +71,7 @@ export default function YourTrainings() {
                         Reserva para {pet?.name}
                       </p>
                       <span>
-                        {pet.gender === "male" ? (
+                        {pet?.gender === "male" ? (
                           <Male size={20} />
                         ) : (
                           <Female size={20} />

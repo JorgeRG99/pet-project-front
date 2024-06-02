@@ -11,6 +11,7 @@ const API_MIDDLEWARE = '/api'
 // ------------ USER -------------
 export const SESSION_RECOVER = `${API_ORIGIN}${API_MIDDLEWARE}/recoverSession`
 export const USER_REGISTER = `${API_ORIGIN}${API_MIDDLEWARE}/register`
+export const WORKER_REGISTER = `${API_ORIGIN}${API_MIDDLEWARE}/createWorker`
 export const USER_LOGIN = `${API_ORIGIN}${API_MIDDLEWARE}/login`
 export const USER_LOGOUT = `${API_ORIGIN}${API_MIDDLEWARE}/logout`
 export const GET_USER = `${API_ORIGIN}${API_MIDDLEWARE}/getUser`

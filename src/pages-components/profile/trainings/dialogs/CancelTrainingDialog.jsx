@@ -31,7 +31,7 @@ export default function CancelTrainingDialog({ training, setTrainings, pet }) {
       <DialogContent className="sm:w-[450px] rounded-lg w-[90%] bg-white">
         <DialogHeader>
           <DialogTitle className=" text-center text-xl">
-            Estás a punto cancelar la reserva para {pet.name}
+            Estás a punto cancelar la reserva para {pet?.name}
           </DialogTitle>
           <DialogDescription className="text-black text-[1.2em] text-center"></DialogDescription>
         </DialogHeader>
