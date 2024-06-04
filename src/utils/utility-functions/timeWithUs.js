@@ -16,7 +16,7 @@ export const timeWithUs = (date) => {
         result = `${yearDiff} año${yearDiff > 1 ? "s" : ""}`;
 
         if(monthDiff > 0) {
-            result += `y ${monthDiff} mes${monthDiff > 1 ? "es" : ""}`;
+            result += ` y ${monthDiff} mes${monthDiff > 1 ? "es" : ""}`;
         }
     } else if(monthDiff > 0) {
         result = `${monthDiff} mes${monthDiff > 1 ? "es" : ""}`;
