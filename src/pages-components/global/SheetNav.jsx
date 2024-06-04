@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { NavigationMenuLink } from "@/components/ui/navigation-menu";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import DropdownMenu from "./DropdownMenu";
 import { NAVBAR_PETS, NAVBAR_SERVICES } from "@/configs/content-config";
@@ -19,11 +19,12 @@ import { useUserSession } from "@/hooks/useUserSession";
 import LoggedNavbarOptions from "./LoggedNavbarOptions";
 
 export default function SheetNav() {
+  const [open, setOpen] = useState(false);
   const { userSession } = useUserSession();
   const isAuthenticated = userSession.token;
 
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild className="block sm:hidden">
         <Button variant="outline">Open Menu</Button>
       </SheetTrigger>
@@ -58,18 +59,23 @@ export default function SheetNav() {
                     variant="ghost"
                     className="text-primary-dark hover:text-primary-dark hover:bg-primary-extra-light"
                     size="lg"
+                    onClick={() => setOpen(false)}
                   >
                     Acceder
                   </Button>
                 </Link>
                 <Link to={PAGES_URLS.register}>
-                  <Button size="lg" className="text-white bg-primary-dark">
+                  <Button
+                    size="lg"
+                    onClick={() => setOpen(false)}
+                    className="text-white bg-primary-dark"
+                  >
                     Registro
                   </Button>
                 </Link>
               </>
             ) : (
-              <LoggedNavbarOptions />
+              <LoggedNavbarOptions setOpen={setOpen} />
             )}
           </div>
         </nav>

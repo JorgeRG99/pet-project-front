@@ -15,7 +15,6 @@ export function usePets() {
 
     const petRegister = async (data, setPetsData) => {
         const res = await registerPet(userSession.token, data)
-        console.log(res)
         if(res.status === 201){
             setPetsData(prevState => [...prevState, data])
             toast.info(SUCCESSFUL_PET_REGISTER);

@@ -14,7 +14,7 @@ import { DialogDescription } from "@radix-ui/react-dialog";
 export default function DeletePetDialog({ pet, setPets }) {
   const { petDelete } = usePets();
 
-  const handlePetDelete = async () => await petDelete(pet.id, setPets);
+  const handlePetDelete = async () => await petDelete(pet?.id, setPets);
   return (
     <Dialog>
       <DialogTrigger asChild>

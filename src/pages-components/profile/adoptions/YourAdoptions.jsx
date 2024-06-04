@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -18,11 +17,12 @@ import { PAGES_URLS } from "@/configs/app-routes-config";
 import AdoptionCompleted from "@/pages-components/global/AdoptionCompleted";
 import AdoptionCancelled from "@/pages-components/global/AdoptionCancelled";
 import Cross from "@/icons/Cross";
+import Dog from "@/icons/Dog";
+import Cat from "@/icons/Cat";
 
 export default function YourAdoptions() {
   const [adoptions, setAdoptions] = useState(null);
   const { yourAdoptionsFetch } = useAdoption();
-
   useEffect(() => {
     const getAdoptions = async () => {
       const fetchedAdoptions = await yourAdoptionsFetch();
@@ -42,16 +42,16 @@ export default function YourAdoptions() {
             return (
               <Card
                 className="w-full xs:w-[400px] flex flex-col justify-evenly"
-                key={adoption.id}
+                key={adoption?.id}
               >
                 <CardHeader>
                   <CardTitle className="flex gap-8 items-center">
                     <p className="text-2xl">
                       Proceso de adopcion de{" "}
-                      <span className="capitalize">{pet.name}</span>
+                      <span className="capitalize">{pet?.name}</span>
                     </p>
                     <span>
-                      {pet.gender === "male" ? (
+                      {pet?.gender === "male" ? (
                         <Male size={30} />
                       ) : (
                         <Female size={30} />
@@ -94,12 +94,11 @@ export default function YourAdoptions() {
 
                   <div className="flex flex-col justify-between md:gap-0 gap-10">
                     <div className="flex flex-col gap-4">
+                      <div className="w-full flex items-end justify-end">
+                        <span>{pet?.specie === "dog" ? <Dog /> : <Cat />}</span>
+                      </div>
                       <h3>
-                        <span className="font-semibold">Especie:</span>{" "}
-                        {pet.specie}
-                      </h3>
-                      <h3>
-                        <span className="font-semibold">Raza:</span> {pet.breed}
+                        <span className="font-semibold">Raza:</span> {pet?.breed}
                       </h3>
                     </div>
                     {status === "cancelled" && <AdoptionCancelled />}
@@ -120,7 +119,7 @@ export default function YourAdoptions() {
         <div className="flex flex-col justify-evenly items-center h-[15em]">
           <h3 className="text-xl">Aun no has realizado alguna adopción</h3>
           <Link to={PAGES_URLS.dogs}>
-            <Button className="text-white bg-primary hover:opacity-80 transition duration-200">
+            <Button className="text-white bg-primary-medium hover:opacity-80 transition duration-200">
               Conoce a tu proximo compañero
             </Button>
           </Link>

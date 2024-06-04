@@ -1,4 +1,4 @@
-import { userLogin, userLogout, userRegister } from "@/services/AuthService";
+import { userLogin, userLogout, userRegister, workerRegister } from "@/services/AuthService";
 import { useUserSession } from "./useUserSession";
 import { StorageManager } from "@/utils/utility-classes/storage-manager";
 import { AUTH_TOKEN_STORAGE_KEY } from "@/configs/api-routes-config";
@@ -12,6 +12,17 @@ export function useAuth() {
         const res = await userRegister(userData)
         if (res.status === 201) {
             setUser(res.response.userData, res.response.token)
+            toast.success(SUCCESSFUL_REGISTER);
+        } else if (res < 500) {
+            toast.error(SERVER_VALIDATION_ERROR);
+        } else {
+            toast.error(SERVER_ERROR);
+        }
+    }
+
+    const registerWorker = async (userData) => {
+        const res = await workerRegister(userData)
+        if (res.status === 201) {
             toast.success(SUCCESSFUL_REGISTER);
         } else if (res < 500) {
             toast.error(SERVER_VALIDATION_ERROR);
@@ -46,5 +57,5 @@ export function useAuth() {
         }
     }
 
-    return { register, login, logout }
+    return { register, registerWorker, login, logout }
 }

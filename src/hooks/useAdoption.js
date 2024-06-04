@@ -35,7 +35,13 @@ export function useAdoption() {
 
     const yourAdoptionsFetch = async () => {
         const res = await yourAdoptions(userSession.token)
-        return res.response
+
+        if (res.status === 200) {
+            return res.response
+        } else {
+            toast.error(SERVER_ERROR);
+            return []
+        }
     }
 
     const adoptionCancel = async (id) => {

@@ -16,6 +16,7 @@ export const getAllPets = async (token) => {
         return { status: 500 }
     }
 }
+
 export const getDogs = async () => {
     try {
         const res = await fetch(DOGS);

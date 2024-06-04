@@ -13,6 +13,8 @@ import { useEffect, useState } from "react";
 import EditPetInfoDialog from "./dialogs/EditPetInfoDialog";
 import DeletePetDialog from "./dialogs/DeletePetDialog";
 import AddPetDialog from "./dialogs/AddPetDialog";
+import Dog from "@/icons/Dog";
+import Cat from "@/icons/Cat";
 
 export default function AllPetsPanel() {
   const [pets, setPets] = useState([]);
@@ -32,28 +34,35 @@ export default function AllPetsPanel() {
       <AddPetDialog setPets={setPets} />
       <div className="w-full grid xs:grid-cols-pets grid-cols-petsmall gap-12">
         {pets?.map((pet) => (
-          <Card className="w-full flex flex-col justify-evenly" key={crypto.randomUUID()}>
+          <Card
+            className="w-full flex flex-col justify-evenly"
+            key={crypto.randomUUID()}
+          >
             <CardHeader>
-              <CardTitle className="flex gap-4 items-center">
-                <p className="text-xl capitalize">{pet.name}</p>
-                <span>
-                  {pet.gender === "male" ? (
-                    <Male size={20} />
-                  ) : (
-                    <Female size={20} />
-                  )}
-                </span>
+              <CardTitle className="flex justify-between items-center">
+                <div className="flex gap-4 items-center">
+                  <p className="text-xl capitalize">{pet?.name}</p>
+                  <span>
+                    {pet?.gender === "male" ? (
+                      <Male size={20} />
+                    ) : (
+                      <Female size={20} />
+                    )}
+                  </span>
+                </div>
+
+                <span>{pet?.specie === "dog" ? <Dog /> : <Cat />}</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-6 text-sm">
-                <p>{pet.additional_info}</p>
+                <p>{pet?.additional_info}</p>
                 <div className="flex justify-between text-sm">
-                  <p>Edad: {pet.age} años</p>
-                  <p>Peso: {pet.weight}</p>
+                  <p>Edad: {pet?.age} años</p>
+                  <p>Peso: {pet?.weight} kg</p>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <p>{timeWithUs(pet.date_entry)} con nosotros</p>
+                  <p>{timeWithUs(pet?.date_entry)} con nosotros</p>
                   <p className="font-medium text-[1.1em]">{pet.breed}</p>
                 </div>
               </div>

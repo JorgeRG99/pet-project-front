@@ -30,6 +30,6 @@ export const USER_VALIDATION_REGEX = {
 export const PET_VALIDATION_REGEX = {
     name: /^[a-zA-Z\s]{3,}$/,
     additionalInfo: /^.{10,150}$/,
-    weight: /^(?:[1-9](?:\.\d)?|[1-4][0-9](?:\.\d)?|50(?:\.0)?)$/,
+    weight: /^(0\.[3-9]|[1-4]?\d(\.\d)?|50\.0)$/,
     age: /^(?:[1-9]|1[0-9]|2[0-5])(?:\.\d)?$/,
 }

@@ -24,7 +24,8 @@ export default function EditPetInfoDialog({ pet, setPets }) {
   const { validatePetUpdate } = usePetValidation();
   const [hasAnyValueChanged, setHasAnyValueChanged] = useState(false);
   const [updatedData, setUpdatedData] = useState({
-    additionalInfo: pet.additional_info,
+    weight: pet?.weight.replace(" kg", ""),
+    additionalInfo: pet?.additional_info,
   });
 
   const handleChange = (e) => {
@@ -52,7 +53,7 @@ export default function EditPetInfoDialog({ pet, setPets }) {
       } else {
         const cleanUpdatedData = removeUndefinedKeys(updatedData);
 
-        await petUpdate(cleanUpdatedData, setPets, pet.id);
+        await petUpdate(cleanUpdatedData, setPets, pet?.id);
         setOpen(false);
         setValidationMessages({});
       }
@@ -81,6 +82,7 @@ export default function EditPetInfoDialog({ pet, setPets }) {
               placeholder="Introduce el peso de la mascota"
               className="mt-2 mb-4 py-5"
               onChange={handleChange}
+              value={updatedData?.weight}
               error={validationMessages?.weight}
             />
           </div>
@@ -103,6 +105,7 @@ export default function EditPetInfoDialog({ pet, setPets }) {
           </DialogTrigger>
           <Button
             onClick={handleSubmit}
+            disabled={!hasAnyValueChanged}
             className="text-white hover:opacity-75 transition duration-200 bg-primary-dark"
           >
             Actualizar

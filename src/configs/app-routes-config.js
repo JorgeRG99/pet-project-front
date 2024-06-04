@@ -7,7 +7,7 @@ export const PAGES_URLS = {
     cats: "/gatos",
     hotel: "/hotel",
     training: "/adiestramiento",
-    education: " /educacion",
     profile: "/perfil",
-    panel: "/panel"
+    panel: "/panel",
+    registerWorker: "/registrar-trabajador",
 }

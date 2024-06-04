@@ -61,7 +61,6 @@ export default function AddPetDialog({ setPets }) {
 
   const handleSubmit = async () => {
     const validationResult = validatePetRegister(petData);
-    console.log(validationResult);
     const hasAnyError = Object.values(validationResult).some(
       (value) => value === false
     );

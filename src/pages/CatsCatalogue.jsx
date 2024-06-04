@@ -9,6 +9,8 @@ import {
 import { PAGES_URLS } from "@/configs/app-routes-config";
 import { UserSessionContext } from "@/context/userSession";
 import { useCats } from "@/hooks/useCats";
+import Cat from "@/icons/Cat";
+import Dog from "@/icons/Dog";
 import Female from "@/icons/Female";
 import Male from "@/icons/Male";
 import RequestAdoptionDialog from "@/pages-components/catalogues/dialog/RequestAdoptionDialog";
@@ -29,11 +31,24 @@ export default function CatsCatalogue() {
       </h1>
       <section className="mt-12 grid grid-cols-petsmall  xs:grid-cols-pets gap-12 px-8">
         {cats?.map((cat) => (
-          <Card className="w-full flex flex-col justify-evenly" key={crypto.randomUUID()}>
+          <Card
+            className="w-full flex flex-col justify-evenly"
+            key={crypto.randomUUID()}
+          >
             <CardHeader>
-              <CardTitle className="flex gap-4 items-center">
-                <p className="text-xl capitalize">{cat.name}</p>
-                <span>{cat.gender === "male" ? <Male size={20} /> : <Female size={20} />}</span>
+              <CardTitle className="flex justify-between items-center">
+                <div className="flex gap-4 items-center">
+                  <p className="text-xl capitalize">{cat.name}</p>
+                  <span>
+                    {cat.gender === "male" ? (
+                      <Male size={20} />
+                    ) : (
+                      <Female size={20} />
+                    )}
+                  </span>
+                </div>
+
+                <Cat />
               </CardTitle>
             </CardHeader>
             <CardContent>
