@@ -38,11 +38,11 @@ export default function TrainingCatsPricesCard() {
       <CardContent className="space-y-8 w-full p-8 sm:text-sm text-xs font-medium">
         <div className="md:space-y-6 space-y-3">
           <h3 className="font-semibold">Medianos (Hasta 8 kg)</h3>
-          <p className="pl-4">- {TRAINING_PRICES.cats.medium}€ por sesion</p>
+          <p className="pl-4">- {TRAINING_PRICES.cats.medium}€ por sesión</p>
         </div>
         <div className="md:space-y-4">
           <h3 className="font-semibold">Grandes (Más de 8 kg)</h3>
-          <p className="pl-4">- {TRAINING_PRICES.cats.big}€ por sesion</p>
+          <p className="pl-4">- {TRAINING_PRICES.cats.big}€ por sesión</p>
         </div>
         <div className="w-full md:space-y-5 space-y-3">
           <div className="flex items-center space-x-2">
