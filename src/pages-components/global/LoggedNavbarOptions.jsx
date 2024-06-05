@@ -8,21 +8,21 @@ import { USER_TYPES } from "@/configs/user-types-config";
 export default function LoggedNavbarOptions({ setOpen }) {
   const { userSession } = useUserSession();
   const { role } = userSession;
+  const isWorker = role === USER_TYPES.worker;
 
-  const buttonText = role === USER_TYPES.user ? "Perfil" : "Panel";
-  const redirectUrl =
-    role === USER_TYPES.user ? PAGES_URLS.profile : PAGES_URLS.panel;
+  const buttonText = isWorker ? "Panel" : "Perfil";
+  const redirectUrl = isWorker ? PAGES_URLS.panel : PAGES_URLS.profile;
 
-    const handleClose = () => {
-      if(typeof setOpen === 'undefined') return;
-      setOpen(false);
-    };
+  const handleClose = () => {
+    if (typeof setOpen === "undefined") return;
+    setOpen(false);
+  };
 
   return (
     <section className="flex items-center sm:space-x-4 sm:flex-row flex-col">
       <Link to={redirectUrl} className="py-6 sm:py-0 font-normal">
         <Button
-          onClick={handleClose} 
+          onClick={handleClose}
           className="text-white bg-primary-dark hover:opacity-75 transition duration-200 active:scale-95"
         >
           {buttonText}
