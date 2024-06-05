@@ -37,16 +37,16 @@ export default function TrainingDogsPricesCard() {
       <CardContent className="space-y-8 w-full p-8 sm:text-sm text-xs font-medium">
         <div className="md:space-y-4">
           <h3 className="font-semibold">Medianos (Hasta 25 kg)</h3>
-          <p className="pl-4">- {TRAINING_PRICES.dogs.medium}€ por sesion</p>
+          <p className="pl-4">- {TRAINING_PRICES.dogs.medium}€ por sesión</p>
         </div>
         <div className="md:space-y-4">
           <h3 className="font-semibold">Grandes (Más de 25 kg)</h3>
-          <p className="pl-4">- {TRAINING_PRICES.dogs.big}€ por sesion</p>
+          <p className="pl-4">- {TRAINING_PRICES.dogs.big}€ por sesión</p>
         </div>
         <div className="w-full md:space-y-5 space-y-3">
           <div className="flex items-center space-x-2">
             <Check />
-            <p>Sesiones individuales de 50 minutos.</p>
+            <p>Sesiones individuales de 50 minutos</p>
           </div>
           <div className="flex items-center space-x-2">
             <Check />

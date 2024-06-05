@@ -36,9 +36,9 @@ export default function HotelDogsPricesCard() {
       </CardHeader>
       <CardContent className="space-y-12 w-full p-8 sm:text-sm text-xs font-medium">
         <div className="md:space-y-6 space-y-3">
-          <h3>Pequeños (hasta 10 kg) ~ {PRICES.dogs.small}€/dia</h3>
-          <h3>Medianos (10.1 kg - 25 kg) ~ {PRICES.dogs.medium}€/dia</h3>
-          <h3>Grandes (Más de 25 kg) ~ {PRICES.dogs.big}€/dia</h3>
+          <h3>Pequeños (hasta 10 kg) ~ {PRICES.dogs.small}€/día</h3>
+          <h3>Medianos (10.1 kg - 25 kg) ~ {PRICES.dogs.medium}€/día</h3>
+          <h3>Grandes (Más de 25 kg) ~ {PRICES.dogs.big}€/día</h3>
         </div>
         <div className="space-y-3">
           <p>Estancia semanal: {DISCOUNTS.week}% de descuento</p>

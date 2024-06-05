@@ -37,8 +37,8 @@ export default function HotelCatsPricesCard() {
       </CardHeader>
       <CardContent className="space-y-12 w-full p-8 text-sm font-medium">
         <div className="md:space-y-6 space-y-3">
-          <h3>Pequeños (hasta 8 kg) ~ {PRICES.cats.small}€/dia</h3>
-          <h3>Grandes (Más de 8 kg) ~ {PRICES.cats.medium}€/dia</h3>
+          <h3>Pequeños (hasta 8 kg) ~ {PRICES.cats.small}€/día</h3>
+          <h3>Grandes (Más de 8 kg) ~ {PRICES.cats.medium}€/día</h3>
         </div>
         <div className="space-y-3">
           <p>Estancia semanal: {DISCOUNTS.week}% de descuento</p>
