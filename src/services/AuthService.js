@@ -45,12 +45,13 @@ export const userRegister = async (userData) => {
     }
 }
 
-export const workerRegister = async (userData) => {
+export const workerRegister = async (userData, token) => {
     try {
         const res = await fetch(WORKER_REGISTER, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(userData),
         });

@@ -7,6 +7,7 @@ import { BAD_CREDENTIALS, SERVER_ERROR, SERVER_VALIDATION_ERROR, SUCCESSFUL_LOGI
 
 export function useAuth() {
     const { setUser, userSession } = useUserSession()
+    const { token } = userSession
 
     const register = async (userData) => {
         const res = await userRegister(userData)
@@ -21,7 +22,7 @@ export function useAuth() {
     }
 
     const registerWorker = async (userData) => {
-        const res = await workerRegister(userData)
+        const res = await workerRegister(userData, token)
         if (res.status === 201) {
             toast.success(SUCCESSFUL_REGISTER);
         } else if (res < 500) {
@@ -47,7 +48,7 @@ export function useAuth() {
     }
 
     const logout = async () => {
-        const res = await userLogout(userSession.token)
+        const res = await userLogout(token)
         if (res.status === 200) {
             setUser(null)
             StorageManager.remove(AUTH_TOKEN_STORAGE_KEY)
