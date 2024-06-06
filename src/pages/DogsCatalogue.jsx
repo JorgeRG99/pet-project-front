@@ -39,7 +39,7 @@ export default function DogsCatalogue() {
                 <div className="flex gap-4 items-center">
                   <p className="text-xl capitalize">{dog.name}</p>
                   <span>
-                    {dog.gender === "male" ? (
+                    {dog?.gender === "male" ? (
                       <Male size={20} />
                     ) : (
                       <Female size={20} />

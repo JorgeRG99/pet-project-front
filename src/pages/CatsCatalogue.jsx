@@ -40,7 +40,7 @@ export default function CatsCatalogue() {
                 <div className="flex gap-4 items-center">
                   <p className="text-xl capitalize">{cat.name}</p>
                   <span>
-                    {cat.gender === "male" ? (
+                    {cat?.gender === "male" ? (
                       <Male size={20} />
                     ) : (
                       <Female size={20} />

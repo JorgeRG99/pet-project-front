@@ -60,7 +60,7 @@ export default function TrainingsPanel() {
                     </p>
                     <div className="flex gap-3">
                       <span>
-                        {pet.gender === "male" ? (
+                        {pet?.gender === "male" ? (
                           <Male size={25} />
                         ) : (
                           <Female size={25} />
