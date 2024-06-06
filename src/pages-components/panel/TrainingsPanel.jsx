@@ -66,7 +66,7 @@ export default function TrainingsPanel() {
                           <Female size={25} />
                         )}
                       </span>
-                      <span>{pet.specie === "dog" ? <Dog /> : <Cat />}</span>
+                      <span>{pet?.specie === "dog" ? <Dog /> : <Cat />}</span>
                     </div>
                   </CardTitle>
                 </CardHeader>

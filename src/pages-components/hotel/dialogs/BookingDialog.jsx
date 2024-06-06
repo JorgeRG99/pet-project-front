@@ -186,9 +186,9 @@ export default function BookingDialog({ type }) {
                 <SelectContent>
                   <SelectGroup>
                     {pets?.map((pet) => (
-                      <SelectItem key={crypto.randomUUID()} value={pet.id}>
-                        {pet.name} - {pet.breed || pet?.breed_name} -{" "}
-                        {pet.gender === "male" ? "Macho" : "Hembra"}
+                      <SelectItem key={crypto.randomUUID()} value={pet?.id}>
+                        {pet?.name} - {pet?.breed || pet?.breed_name} -{" "}
+                        {pet?.gender === "male" ? "Macho" : "Hembra"}
                       </SelectItem>
                     ))}
                   </SelectGroup>

@@ -39,16 +39,16 @@ export default function AdoptionsPanel() {
                   <CardTitle className="flex gap-8 items-center">
                     <p className="text-2xl">
                       Proceso de adopcion de{" "}
-                      <span className="capitalize">{pet.name}</span>
+                      <span className="capitalize">{pet?.name}</span>
                     </p>
                     <span>
-                      {pet.gender === "male" ? (
+                      {pet?.gender === "male" ? (
                         <Male size={30} />
                       ) : (
                         <Female size={30} />
                       )}
                     </span>
-                    <span>{pet.specie === "dog" ? <Dog /> : <Cat />}</span>
+                    <span>{pet?.specie === "dog" ? <Dog /> : <Cat />}</span>
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-col gap-4">
@@ -93,7 +93,7 @@ export default function AdoptionsPanel() {
                       <div className="flex flex-col gap-4">
                         <h3>
                           <span className="font-semibold">Raza:</span>{" "}
-                          {pet.breed}
+                          {pet?.breed}
                         </h3>
                       </div>
                       <ManageAdoptionDialog
