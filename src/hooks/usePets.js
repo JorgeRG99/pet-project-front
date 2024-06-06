@@ -1,4 +1,4 @@
-import { SERVER_ERROR, SERVER_VALIDATION_ERROR, SUCCESSFUL_PET_REGISTER, SUCCESSFUL_PET_UPDATE } from "@/configs/user-feedback-config";
+import { SERVER_ERROR, SERVER_VALIDATION_ERROR, SUCCESSFUL_PET_DELETE, SUCCESSFUL_PET_REGISTER, SUCCESSFUL_PET_UPDATE } from "@/configs/user-feedback-config";
 import { UserSessionContext } from "@/context/userSession";
 import { deletePet, getAllPets, registerPet, updatePet } from "@/services/PetService";
 import { convertKeysToSnakeCase } from "@/utils/utility-functions/fetchKeysFormat";
@@ -47,7 +47,7 @@ export function usePets() {
 
         if(res.status === 200){
             setPetsData(prevState => prevState.filter(pet => pet.id !== petId))
-            toast.info(SUCCESSFUL_PET_UPDATE);
+            toast.info(SUCCESSFUL_PET_DELETE);
         } else {
             toast.error(SERVER_ERROR);
         }
