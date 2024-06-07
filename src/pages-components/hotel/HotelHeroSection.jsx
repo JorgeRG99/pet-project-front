@@ -19,12 +19,12 @@ export default function HotelHeroSection({pricesRef}) {
         Elige un servicio
       </Button>
 
-      <div className="w-[80px] h-[80px] rounded-full bg-primary-dark absolute lg:top-[10%] top-[13%] left-[8%]"></div>
-      <div className="w-[50px] h-[50px] rounded-full bg-primary-dark absolute top-[10%] right-[25%]"></div>
-      <div className="w-[70px] h-[70px] rounded-full bg-primary absolute top-[20%] right-[17%]"></div>
-      <div className="w-[50px] h-[50px] rounded-full bg-primary-dark absolute bottom-[10%] right-[25%]"></div>
-      <div className="w-[90px] h-[90px] rounded-full bg-primary absolute bottom-[25%] right-[20%]"></div>
-      <div className="lg:w-[145px] lg:h-[145px] w-[100px] h-[100px] rounded-full bg-primary absolute bottom-[25%] left-[13%]"></div>
+      <div className="mobile-landscape:left-[5%] mobile-landscape:w-[80px] w-[80px] h-[80px] rounded-full bg-primary-dark absolute lg:top-[10%] top-[13%] left-[8%]"></div>
+      <div className="mobile-landscape:right-[20%] mobile-landscape:w-[50px] w-[50px] h-[50px] rounded-full bg-primary-dark absolute top-[10%] right-[25%]"></div>
+      <div className="mobile-landscape:right-[5%] mobile-landscape:w-[70px] w-[70px] h-[70px] rounded-full bg-primary absolute top-[20%] right-[17%]"></div>
+      <div className="mobile-landscape:hidden w-[50px] h-[50px] rounded-full bg-primary-dark absolute bottom-[10%] right-[25%]"></div>
+      <div className="mobile-landscape:bottom-[5%] mobile-landscape:w-[90px] w-[90px] h-[90px] rounded-full bg-primary absolute bottom-[25%] right-[20%]"></div>
+      <div className="mobile-landscape:bottom-0 lg:w-[145px] lg:h-[145px] mobile-landscape:w-[100px] w-[100px] h-[100px] rounded-full bg-primary absolute bottom-[25%] left-[13%]"></div>
       <div className="w-[40px] h-[40px] rounded-full bg-primary-dark absolute top-[7%] left-[16%]"></div>
     </section>
   );

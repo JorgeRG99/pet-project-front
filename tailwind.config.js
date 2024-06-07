@@ -16,6 +16,7 @@ module.exports = {
       'lg': '1024px',
       'xl': '1280px',
       '2xl': '1536px',
+      'mobile-landscape': { 'raw': '(max-width: 900px) and (orientation: landscape)' },
     },
     container: {
       center: true,

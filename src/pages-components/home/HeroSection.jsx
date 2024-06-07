@@ -10,7 +10,7 @@ export default function HeroSection() {
   
   return (
     <section className="md:h-[90vh] sm:h-[80vh] h-[60vh] flex items-center sm:px-16 px-10 relative">
-      <div className="xl:w-[180px] md:w-[130px] sm:w-[120px] w-[100px] absolute top-[8%] lg:left-[30%] sm:left-[20%] left-[15%] bg-primary rounded-[50%] overflow-hidden">
+      <div className="mobile-landscape:w-[100px] xl:w-[180px] md:w-[130px] sm:w-[120px] w-[100px] absolute top-[8%] lg:left-[30%] sm:left-[20%] left-[15%] bg-primary rounded-[50%] overflow-hidden">
         <img
           src="./images/home/hero-section3.png"
           alt="Pequeño perro blanco tumbado tranquilamente sobre una superficie suave, luciendo relajado y sereno"
@@ -41,13 +41,13 @@ export default function HeroSection() {
           </Link>
         </div>
       </article>
-      <div className="xl:w-[250px] lg:w-[220px] md:w-[200px] sm:w-[180px] w-[120px] absolute top-[7%] sm:right-[30%] right-[10%] bg-primary-dark rounded-[50%] overflow-hidden">
+      <div className="mobile-landscape:w-[120px] xl:w-[250px] lg:w-[220px] md:w-[200px] sm:w-[180px] w-[120px] absolute top-[7%] sm:right-[30%] right-[10%] bg-primary-dark rounded-[50%] overflow-hidden">
         <img
           src="./images/home/hero-section1.png"
           alt="Pequeño perro blanco tumbado tranquilamente sobre una superficie suave, luciendo relajado y sereno"
         />
       </div>
-      <div className="xl:w-[300px] lg:w-[250px] md:w-[220px] sm:w-[200px] w-[140px] absolute sm:top-[65%] md:top-[45%] top-[79%] lg:right-[10%] right-[5%] bg-primary-light rounded-full overflow-hidden">
+      <div className="mobile-landscape:w-[140px] xl:w-[300px] lg:w-[250px] md:w-[220px] sm:w-[200px] w-[140px] absolute sm:top-[65%] md:top-[45%] top-[79%] lg:right-[10%] right-[5%] bg-primary-light rounded-full overflow-hidden">
         <img
           src="./images/home/hero-section2.png"
           width="100%"
