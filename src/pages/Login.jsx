@@ -33,7 +33,7 @@ export default function Login() {
   };
 
   return (
-    <main className="flex lg:h-screen h-[80vh] w-full">
+    <main className="flex lg:h-screen h-[80vh] w-full mobile-landscape:mt-14">
       <div className="container h-full flex flex-col gap-8 justify-center items-center md:w-[500px] lg:pb-20 pb-0">
         <h1 className="text-4xl font-semibold mb-4">Iniciar Sesión</h1>
         <form className="w-full" onSubmit={handleSubmit}>
